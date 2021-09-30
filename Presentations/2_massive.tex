@@ -61,7 +61,7 @@ $$c = 3\cdot 10^8 \text{m/s} \qquad \quad G = 6.67 \cdot 10^{-11} \text{m}^3 \te
 \begin{equation*}
     ds^2 = g_{\mu \nu} x^\mu x^\nu
 \end{equation*}
-
+https://www.youtube.com/watch?v=nrLX81Pz7fI
 \end{frame}
 
 
@@ -158,13 +158,13 @@ Let the proper time $\tau$ be our affine parameter, so the following holds
 
 which is equivalent to the r-equation obtained before. Thus, 
     
-    
+\begin{block}{}
 \begin{eqnarray*}
 \left( 1 - \frac{2 \mu}{r} \right) \dot{t} &= k \\
 {\color{blue} c^2 \left( 1 - \frac{2 \mu}{r} \right) \dot{t}^2  - \left( 1 - \frac{2 \mu}{r} \right)^{-1} \dot{r}^2 - r\dot{\phi}^2 } &{\color{blue}= c^2} \\
 r^2 \dot{\phi} &= h
 \end{eqnarray*}
-    
+\end{block}    
 \end{frame}
 
 
@@ -179,9 +179,11 @@ Using the new set of differential equations, we obtain
 
 Differentiating...
 
-\begin{equation}
+\begin{block}{}
+\begin{equation*}
     \ddot{r} = \frac{h^2}{r^3} - \frac{3\mu h^2}{r^4} - \frac{\mu c^2}{r^2}
-\end{equation}
+\end{equation*}
+\end{block}
 
 We can solve this equation and find $\phi(\tau)$ from 
 
@@ -217,9 +219,13 @@ Analogously, we could use the chain rule $\frac{dr}{d\tau} = \frac{h}{r^2} \frac
 
 into 
 
+\begin{block}{}
+
 \begin{equation*}
     \frac{d^2 u}{d\phi^2} + u = \frac{\mu c^2}{h^2} + 3 \mu u^2
 \end{equation*}
+
+\end{block}
 
 This is a closed differential equation for the shape of the orbits.
 
@@ -227,6 +233,170 @@ This is a closed differential equation for the shape of the orbits.
 
 
 
+
+\begin{frame}{Stability}
+
+In Newtonian mechanics, 
+    
+\begin{equation*}
+    \frac12 \left( \frac{dr}{dt} \right)^2 + \underbrace{\frac{h^2}{2r^2} - \frac{\mu c^2}{r}}_{V_{\text{eff}}(r)} = E
+\end{equation*}
+
+whereas in Relativity,  
+
+\begin{equation*}
+    \frac12 \left( \frac{dr}{d\tau} \right)^2 + \underbrace{\frac{h^2}{2r^2} - \frac{\mu c^2}{r} - \frac{\mu h^2}{r^3}}_{V_{\text{eff}}(r)} = \frac{c^2}{2}(k^2-1)
+\end{equation*}
+
+\end{frame}
+
+
+
+\begin{frame}{Newtonian $V_{eff}$}
+    
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.8\textwidth]{Presentations/Images/2_veff_newton.png}
+    \end{figure}
+    
+\end{frame}
+
+
+
+\begin{frame}{Relativistic $V_{eff}$}
+    
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.8\textwidth]{Presentations/Images/2_veff_relat.png}
+    \end{figure}
+    
+\end{frame}
+
+
+\begin{frame}{Relativistic $V_{eff}$}
+    
+\begin{equation*}
+    \left. \frac{dV_{eff}}{dr}\right|_{r=r^*} = 0 
+\end{equation*}
+
+leads us to 
+
+\begin{block}{}
+
+\begin{equation*}
+    r^* = \frac{h}{2\mu c^2} \left( h \pm \sqrt{h^2 - 12 \mu^2 c^2} \right)
+\end{equation*}
+
+\end{block}
+
+We have a stable (+) and unstable (-) circular orbits. 
+
+If $h = 2\sqrt{3} \mu c$ there exists only one stable orbit with $r^* = 6 \mu$
+
+\end{frame}
+
+
+\begin{frame}{Classical and Relativistic}
+    
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.8\textwidth]{Presentations/Images/2_veff_newrel.png}
+    \end{figure}
+    
+\end{frame}
+
+
+
+\begin{frame}{Classical and Relativistic}
+
+        \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.8\textwidth]{Presentations/Images/2_class_rel_orbit.png}
+    \end{figure}
+    
+\end{frame}
+
+
+\section{Particular cases}
+
+
+\begin{frame}{Radial motion}
+    
+There is no angular momentum, so $h=0$
+
+\begin{equation*}
+     \ddot{r} = \frac{h^2}{r^3} - \frac{3\mu h^2}{r^4} - \frac{\mu c^2}{r^2}
+\end{equation*}
+    
+becomes 
+
+\begin{block}{}
+\begin{equation*}
+     \ddot{r} = - \frac{GM}{r^2}
+\end{equation*}
+\end{block}
+
+which has the same form of the classical solution. They are not the same, though.
+
+\end{frame}
+
+
+
+\begin{frame}{Circular motion}
+    
+There is no radial momentum, so $\dot{r}=0$
+
+\begin{equation*}
+    \frac{d^2 u}{d\phi^2} + u = \frac{\mu c^2}{h^2} + 3 \mu u^2
+\end{equation*}
+    
+becomes 
+
+\begin{equation*}
+     u = \frac{\mu c^2}{h^2} + 3 \mu u^2
+\end{equation*}
+
+Then,
+
+\begin{block}{}
+\begin{equation*}
+ h = \left( \frac{\mu c^2 r^2}{r - 3\mu} \right)^{1/2}
+\end{equation*}
+\end{block}
+
+There exists no valid circular orbit below $r = 3\mu$. 
+
+\end{frame}
+
+
+\section{A more general case}
+
+
+\begin{frame}{Out of the Equator}
+
+If the condition $\theta = \pi/2$ is not imposed, the equations read
+
+\begin{block}{}
+\begin{align*}
+\ddot{\theta} &= -\frac{2}{r} \dot{r} \dot{\theta} + \frac{\cos \theta}{r^4 \sin^3 \theta} h^2  \\
+\ddot{r} &= -\frac{\mu c^2 k^2}{r^2} + \left( 1 - \frac{2\mu}{r}\right)^{-1} \frac{\mu}{r^2}\dot{r}^2 + r^2 \dot{\theta}^2 + \frac{h^2}{r^2 \sin^2 \theta} 
+\end{align*}
+\end{block}
+
+which can be easily solved numerically.
+
+\end{frame}
+
+
+
+\begin{frame}{Outside the Equator}
+
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=0.75\textwidth]{Presentations/Images/2_gen_obit1.png}
+\end{figure}
+
+\end{frame}
 
 
 \end{document}
