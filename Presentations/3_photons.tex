@@ -28,7 +28,7 @@
 \useinnertheme{circles}
 
 
-\title[Schwartzschild geometry]{Schwartzschild Geometry: Geodesics for massless particles}
+\title[Schwarzschild geometry]{Schwarzschild Geometry: Geodesics for massless particles}
 \date{\today}
 \author[Universidad del Valle]{ Juan E. Bedoya }
 \institute[]{Universidad del Valle \\ Departamento de física}
@@ -50,14 +50,14 @@
 	\begin{frame}{Métrica de Schwarzschild}
 	    
 	    \begin{block}{}
-	   
+
 	    \begin{equation*}
 	    ds^{2}=c^{2}\Big( 1- \frac{2\mu}{r}\Big) dt^{2}-\Big( 1- \frac{2\mu}{r}\Big)^{-1} dx^{2}-r^{2}d\theta^{2}-r^{2}sen^{2}(\theta)d\phi^{2} 
 	    \end{equation*}\\
 	   Siendo $\mu=\frac{GM}{c^{2}}$
 	\begin{equation*}
-	\mathbb{G}=
-     \begin{bmatrix}
+	\mathbb{G}= 
+      \begin{bmatrix}
       c^{2}\Big( 1- \frac{2\mu}{r}\Big) & 0&0&0\\
       0 &-\Big( 1- \frac{2\mu}{r}\Big)^{-1}&0&0\\
       0&0&-r^{2}&0\\
@@ -225,8 +225,8 @@
           \begin{eqnarray*}
     \Big(\frac{du}{d\phi}\Big)^{2}+u^{2}-2u^{3}\mu&=&\frac{c^{2}k^{2}}{h^{2}} \\
     2\frac{du}{d\phi}\frac{d^{2}u}{d\phi^{2}}+2u\frac{du}{d\phi}-6u^{2}\frac{du}{d\phi}\mu&=&0\\
-    \frac{d^{2}u}{d\phi^{2}}+2u-3u^{2}\mu&=&0 \\
-    \frac{d^{2}u}{d\phi^{2}}+2u-\frac{3GM}{c^{2}}u^{2}&=&0    
+    \frac{d^{2}u}{d\phi^{2}}+u-3u^{2}\mu&=&0 \\
+    \frac{d^{2}u}{d\phi^{2}}+u-\frac{3GM}{c^{2}}u^{2}&=&0    
     \end{eqnarray*}\\    
     \end{block}
   \end{frame}
@@ -262,7 +262,7 @@
       \begin{block}{}
     Cuya solución es:
   \begin{eqnarray*}
-       ct=\pm r\pm Ln\Big| \frac{r}{2\mu}-1 \Big|\\
+       ct=\pm r\pm Ln\Big| \frac{r}{2\mu}-1 \Big|+const\\
  \end{eqnarray*}
  siendo + para los fotones saliendo y - para los fotones entrando
       \end{block}
@@ -280,14 +280,12 @@
    \end{block}
     \begin{block}{casos limite}
     \begin{itemize}
-        \item Si $t=-t$ $\Rightarrow$ Las trayectorias salientes se comvierten en entrates y viceversa.
+        \item Si $t=-t$ $\Rightarrow$ Las trayectorias salientes se convierten en entrates y viceversa.
         \item Si $r\rightarrow \infty$ $\Rightarrow$ El termino de r va a dominar sobre el del logaritmo llegando a que $ct=r$ los que no lleva a la relatividad especial.
         \item Si $r\rightarrow 2\mu$ $\Rightarrow$ el logaritmo se va a infinito, luego $ct\rightarrow \pm \infty$, mientras mas nos acerquemos a $2\mu$ el cono de luz es mas vertical 
     \end{itemize}
       \end{block}
   \end{frame}
-
-
 
     \begin{frame}{}
 \begin{figure}
@@ -302,10 +300,10 @@
     \begin{block}{}
     Si imponemos la condición  $\dot{r}=0$ en la ecuación radial se obtiene que
     \begin{eqnarray*}
-          R=\frac{3GM}{c^{2}}\approx 4.5 Km
+          R=3\mu=\frac{3GM}{c^{2}}\approx 4.5 Km
     \end{eqnarray*}
     este fenomeno es inestable (luego veremos porque) y además el radio es muy pequeño.\\
-    
+
     \end{block}
 \end{frame}
 
@@ -337,14 +335,110 @@
     \begin{block}{}
     Usando la ecuación radial antes del cambio a u se llega a que
     \begin{eqnarray*}
-    \frac{d\phi}{dr}&=&\pm \frac{1}{r^{2}}\Big[ \frac{1}{b^{2}} -\frac{1}{r^{2}}\Big(1-\frac{2\mu}{r} \Big) \Big]^{-1/2}
+    \frac{d\phi}{dr}&=&\pm \frac{1}{r^{2}}\Big[ \frac{1}{b^{2}} -V_{eff} \Big]^{-1/2}
     \end{eqnarray*}
     si $r \rightarrow \infty$
     \begin{eqnarray*}
     \frac{d\phi}{dr}&=&\pm \frac{1}{r^{2}}b\\
     \end{eqnarray*}
+    Resolviendola queda de la forma
+    \begin{eqnarray*}
+    \phi&=&\mp \frac{1}{r}b\\
+    \end{eqnarray*}
     \end{block}
 \end{frame}
+
+\begin{frame}{}
+    \begin{block}{}
+    Finalmente, si $\phi \rightarrow 0$ 
+    \begin{eqnarray*}
+       sen(\phi)&=&\mp \frac{1}{r}b \\
+       rsen(\phi)=y&=&\mp b\\
+    \end{eqnarray*}
+    \end{block}
+
+\begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{Presentations/Images/3_foton_esc_b.png}
+    \end{figure}
+
+
+\end{frame}
+
+
+\begin{frame}{Tipo de movimientos dependientes de b}
+    \begin{block}{}
+    \begin{eqnarray*}
+        \dot{r}^{2}+V_{eff}=\frac{1}{b^{2}}
+    \end{eqnarray*}
+    \begin{itemize}
+        \item Si $\frac{1}{b^{2}}<\frac{1}{27\mu^{2}}$ $\Rightarrow$ Son las particulas que solo se acercan pero escapan del objeto.\\
+       \item Si $\frac{1}{b^{2}}>\frac{1}{27\mu^{2}}$ $\Rightarrow$ Las particulas que caen dentro del objeto.\\
+
+    \end{itemize}
+    \end{block}
+\end{frame}
+
+
+\section{corrimiento al rojo}
+\begin{frame}{Corrimiento al rojo}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\textwidth]{Presentations/Images/3_foton_redshift.png}
+    \end{figure}
+\end{frame}
+
+
+
+\begin{frame}{}
+    \begin{block}{}
+    La energia que ve cada uno del fotón se abe que es de la forma
+    \begin{eqnarray*}
+          E(A)&=&u_{\mu}(A)p_{\mu}(A)\\
+          E(B)&=&u_{\mu}(A)p_{\mu}(B)\\
+    \end{eqnarray*}
+    Luego
+    \begin{eqnarray*}
+         \frac{E(A)}{E(B)} &=&\frac{u_{\mu}(A)p_{\mu}(A)}{u_{\mu}(A)p_{\mu}(B)}
+    \end{eqnarray*}
+    
+    \end{block}
+     
+     \begin{block}{}
+     Como son fotones $E=h\nu$
+     \begin{eqnarray*}
+         \frac{\nu_{A}}{\nu_{B}} &=&\frac{u_{\mu}(A)p_{\mu}(A)}{u_{\mu}(A)p_{\mu}(B)}
+    \end{eqnarray*}
+    
+     \end{block}
+         
+    \end{frame}
+ 
+ 
+    \begin{frame}{}
+    \begin{block}{}
+        Si suponemos observadores quietos conrrespecto al tiempo propio  se tiene que 
+        \begin{eqnarray*}
+    c^{2}&=& g_{\mu nu} u^{\mu}u^{\nu} \\     
+            \frac{c}{\sqrt{g_{00}}}&=&u^{0}
+        \end{eqnarray*}
+    llegando a que
+      \begin{eqnarray*}
+         \frac{\nu_{A}}{\nu_{B}} &=&\frac{p_{\mu}(A)}{p_{\mu}(B)}  \sqrt{\frac{g_{00}(B)}{g_{00}(A)}}
+    \end{eqnarray*}
+    \end{block}
+    \end{frame}
+
+
+
+    \begin{frame}{}
+    \begin{block}{}
+     Finalmente usando la primera integral mecionanda al inicio y la ecuación del transporte paralelo se demuestras que $p=cont$, lo que nos lleva que
+      \begin{eqnarray*}
+         \frac{\nu_{A}}{\nu_{B}} &=&  \sqrt{\frac{g_{00}(B)}{g_{00}(A)}}
+    \end{eqnarray*}
+    \end{block}
+    \end{frame}
 
 
 \end{document}
