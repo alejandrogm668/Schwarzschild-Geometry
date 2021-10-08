@@ -28,7 +28,7 @@
 \useinnertheme{circles}
 
 
-\title[Schwartzschild geometry]{Schwartzschild Geometry: Geodesics for massive particles}
+\title[Schwarzschild geometry]{Schwarzschild Geometry: Geodesics for massive particles}
 \date{\today}
 \author[Universidad del Valle]{Alejandro Gómez }
 \institute[]{Universidad del Valle \\ Departamento de física}
@@ -97,7 +97,7 @@ The Lagrangian is given by
 \end{equation*}
 \end{block}
 
-\begin{itemize}
+\begin{itemize} 
     \item 4 differential equations from Euler-Lagrange equations.
     \item Variables: $x^0 = ct$, $x^1 = r$, $x^2 = \theta$, $x^3 = \phi$.
     \item $\mathcal{L}$ is cyclic on $ct$ and $\phi$
@@ -396,6 +396,34 @@ which can be easily solved numerically.
    \includegraphics[width=0.75\textwidth]{Presentations/Images/2_gen_obit1.png}
 \end{figure}
 
+\end{frame}
+
+
+
+\section{Exercises}
+
+\begin{frame}{Problem Statements}
+
+    \begin{block}{Conceptual}
+    \begin{itemize}
+        \item What happens if we add another body? Would the spherical symmetry be conserved?
+    \end{itemize}
+    \end{block}    
+    
+    \begin{block}{Analytical}
+    \begin{itemize}
+        \item Differentiate $g_{\alpha \beta} \dot{x}^\alpha \dot{x}^\beta = c^2$ and compare with the initial set of differential equations.
+    \end{itemize}    
+    \end{block}
+    
+    \begin{block}{Numerical}
+    \begin{itemize}
+        \item Obtain the graphs shown throughout this presentations and play with the parameters.
+    \end{itemize}
+    \end{block}
+    
+    \url{github.com/alejandrogm668/Schwarzschild-Geodesics.git}
+    
 \end{frame}
 
 
