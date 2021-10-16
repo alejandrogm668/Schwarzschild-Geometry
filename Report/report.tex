@@ -51,7 +51,7 @@ where the LHS accounts for the geometry of the space time whereas the RHS is the
 
 On the other hand, in 1916 Karl Schwarzschild found a solution of \ref{field} outside a spherical neutral and non-spinning mass \cite{1916SPAW.......189S}. The solution is shown in form of a metric that depends on several parameters that will be discussed in the next sections. The Schwarzschild metric explained how photons trajectories are affected by gravity even though they are massless. It also gave relativistic corrections to planetary motion in the form of elliptical precession and finally, introduced some properties of Black Holes. Thus, this theory contains a lot of interesting physical phenomena which will be discussed throughout this document. 
 
-Finally, this document is based on \cite{hobson_efstathiou_lasenby_2006}, so the interested reader can refer to it for more details and problem sets. 
+Finally, this document is based on \cite{hobson_efstathiou_lasenby_2006}, so the interested reader can refer to it for more details and problem sets. Further details about the numerical calculations shown throughout this document can be found in \url{https://github.com/alejandrogm668/Schwarzschild-Geometry.git}
 
 \section{Metric}\label{metric}
 
@@ -76,7 +76,7 @@ d s^{2}=A(t, r) d t^{2}-B(t, r) d t \vec{x} \cdot d \vec{x}-C(t, r)(\vec{x} \cdo
 \label{genmetric}
 \end{equation}
 
-using $A$, $B$, $C$ and $D$ as arbitrary functions of $t$ and $r$. Introducing the usual spherical polar coordinates, one gets:
+using $A$, $B$, $C$ and $D$ as arbitrary functions of $t$ and $r$. Introducing the usual spherical polar coordinates, we get:
 
 \begin{equation}
 \vec{x} \cdot \vec{x}=r^{2}, \quad \vec{x} \cdot d \vec{x}=r d r, \quad d \vec{x} \cdot d \vec{x}=d r^{2}+r^{2} d \theta^{2}+r^{2} \sin ^{2} \theta d \phi^{2}. \nonumber
@@ -94,88 +94,116 @@ d s^{2}&= A(t, r) d t^{2}-B(t, r) r d t d r-C(t, r) r^{2} d r^{2} \\
 which can be written as 
 
 \begin{equation}
-d s^{2}=A(t, r) d t^{2}-B(t, r) d t d r-C(t, r) d r^{2}-D(t, r)\left(d \theta^{2}+\sin ^{2} \theta d \phi^{2}\right)
+d s^{2}=A(t, r) d t^{2}-B(t, r) d t d r-C(t, r) d r^{2}-D(t, r)\left(d \theta^{2}+\sin ^{2} \theta d \phi^{2}\right),
 \label{genmet2}
 \end{equation}
-by absorbing some terms to the arbitrary functions. One can also define a new radial and a timelike coordinate, such as 
+
+where some terms have been absorbed by the functions. We can also define new radial and time coordinates, such as 
+
 \begin{equation}
-\bar{r}^{2}=D(t, r) \quad \text{and} \quad d \bar{t}=\Phi(t, \bar{r})\left[A(t, \bar{r}) d t-\frac{1}{2} B(t, \bar{r}) d \bar{r}\right]\nonumber
+\bar{r}^{2}=D(t, r) \quad \text{and} \quad d \bar{t}=\Phi(t, \bar{r})\left[A(t, \bar{r}) d t-\frac{1}{2} B(t, \bar{r}) d \bar{r}\right], \nonumber
 \end{equation}
+
 from the second one we find that 
+
 \begin{equation}
-A d t^{2}-B d t d \bar{r}=\frac{1}{A \Phi^{2}} d \bar{t}^{2}-\frac{B}{4 A} d \bar{r}^{2} \nonumber
+A d t^{2}-B d t d \bar{r}=\frac{1}{A \Phi^{2}} d \bar{t}^{2}-\frac{B}{4 A} d \bar{r}^{2}. \nonumber
 \end{equation}
-that allows to define new arbitrary functions $\bar{A}=1 /\left(A \Phi^{2}\right)$ and $\bar{B}=C+B /(4 A)$. So Eq. \ref{genmet2} can be written as:
+
+This allows us to define new arbitrary functions $\bar{A}=1 /\left(A \Phi^{2}\right)$ and $\bar{B}=C+B /(4 A)$. So, Eq. \ref{genmet2} can be written as:
+
 \begin{equation}
-d s^{2}=A(t, r) d t^{2}-B(t, r) d r^{2}-r^{2}\left(d \theta^{2}+\sin ^{2} \theta d \phi^{2}\right)\nonumber
+d s^{2}=A(t, r) d t^{2}-B(t, r) d r^{2}-r^{2}\left(d \theta^{2}+\sin ^{2} \theta d \phi^{2}\right) \nonumber
 \end{equation}
-by removing all the bars over the new variables.\\
-With that, the spatially isotropic metric is found. To find the static isotropic metric, one just needs to write the metric as independent of the timelike coordinate, this means: 
+
+by removing all the bars over the new variables.
+
+Hence, the spatially isotropic metric was found. Now, to find the static isotropic metric, we need to write the metric as an independent element of from the time coordinates, i.e. 
+
 \begin{equation}
-d s^{2}=A( r) d t^{2}-B( r) d r^{2}-r^{2}\left(d \theta^{2}+\sin ^{2} \theta d \phi^{2}\right)\nonumber
+d s^{2}=A( r) d t^{2}-B( r) d r^{2}-r^{2}\left(d \theta^{2}+\sin ^{2} \theta d \phi^{2}\right). \nonumber
 \end{equation}
-Thus one gets the static isotropic metric, but it's still needed to solve the empty-space field equations
+
+Thus, we have a general expression for a static isotropic metric, but we still need to solve the empty-space field equations to obtain $A$ and $B$.
 %------------------------------------------------------------------------------------
 \subsection{Solution to the empty-space field equations}
-To solve the empty-space field equations, we must have a Ricci tensor that vanishes. This is:
+
+To solve the empty-space field equations, we must have a vanishing-Ricci tensor, i.e.
+
 \begin{equation}
         R_{\mu \nu}=\partial_{\nu} \Gamma_{\mu \sigma}^{\sigma}-\partial_{\sigma} \Gamma_{\mu \nu}^{\sigma}+\Gamma_{\mu \sigma}^{\rho} \Gamma_{\rho \nu}^{\sigma}-\Gamma_{\mu \nu}^{\rho} \Gamma_{\rho \sigma}^{\sigma}=0
-        \label{ricci}
+        \label{ricci},
 \end{equation}
 
-having in mind that
+where the Christoffel symbol $\Gamma_{\mu \nu}^{\sigma}$ is given by 
+ 
 \begin{equation}
 \Gamma_{\mu \nu}^{\sigma}=\frac{1}{2} g^{\sigma \rho}\left(\partial_{\nu} g_{\rho \mu}+\partial_{\mu} g_{\rho \nu}-\partial_{\rho} g_{\mu \nu}\right)
-\label{conn}
+\label{conn}.
 \end{equation}
 
-To solve this, we start with the non-zero elements of the metric, $g_{\mu\nu}$
-  $$
+In order to solve this system of equations, we start considering the non-zero elements of the metric, $g_{\mu\nu}$
+
+$$
 \begin{array}{ll}
 g_{00}=A(r), & g^{00}=1 / A(r) \\
 g_{11}=-B(r), & g^{11}=-1 / B(r) \\
 g_{22}=-r^{2}, & g^{22}=-1 / r^{2} \\
-g_{33}=-r^{2} \sin ^{2} \theta, & g^{33}=-1 /\left(r^{2} \sin ^{2} \theta\right)
+g_{33}=-r^{2} \sin ^{2} \theta, & g^{33}=-1 /\left(r^{2} \sin ^{2} \theta\right).
 \end{array}
 $$
-With these components of the metric one can find the connection coefficients, by replacing them in Eq. \ref{conn}. The non-zero coefficients found are: 
+
+We can find the connection coefficients, by replacing these non-zero elements into Eq. \ref{conn}. Then, the non-zero components are found to be
+
 $$
 \begin{array}{lll}
 \Gamma_{01}^{0}=A^{\prime} /(2 A), & \Gamma_{00}^{1}=A^{\prime} /(2 B), & \Gamma_{11}^{1}=B^{\prime} /(2 B) \\
 \Gamma_{22}^{1}=-r / B, & \Gamma_{33}^{1}=-\left(r \sin ^{2} \theta\right) / B, & \Gamma_{12}^{2}=1 / r \\
-\Gamma_{33}^{2}=-\sin \theta \cos \theta, & \Gamma_{13}^{3}=1 / r, & \Gamma_{23}^{3}=\cot \theta
+\Gamma_{33}^{2}=-\sin \theta \cos \theta, & \Gamma_{13}^{3}=1 / r, & \Gamma_{23}^{3}=\cot \theta.
 \end{array}
 $$
-By placing these into Eq. \ref{ricci}, one can find that only the diagonal of the Ricci tensor is non-zero, as follows:
+
+Inserting these terms into Eq. \ref{ricci}, it follows that only the diagonal components of the Ricci tensor are non-vanishing, 
+
 \begin{eqnarray}
 \centering
 R_{00}&=&-\frac{A^{\prime \prime}}{2 B}+\frac{A^{\prime}}{4 B}\left(\frac{A^{\prime}}{A}+\frac{B^{\prime}}{B}\right)-\frac{A^{\prime}}{r B} \label{r00}\\
 R_{11}&=&\frac{A^{\prime \prime}}{2 A}-\frac{A^{\prime}}{4 A}\left(\frac{A^{\prime}}{A}+\frac{B^{\prime}}{B}\right)-\frac{B^{\prime}}{r B} \label{r11}\\
 R_{22}&=&\frac{1}{B}-1+\frac{r}{2 B}\left(\frac{A^{\prime}}{A}-\frac{B^{\prime}}{B}\right)\label{r22} \\
-R_{33}&=&R_{22} \sin ^{2} \theta\label{r33}
+R_{33}&=&R_{22} \sin ^{2} \theta\label{r33}.
 \end{eqnarray}
- Since it's needed that every component of this tensor to be equal to zero, one can obtain the relation
- \begin{equation}
-     A'B+AB'=0\nonumber
- \end{equation}
- by adding B/A times Eq. \ref{r00} to Eq. \ref{r11}. This leads to $AB=\alpha=constant$, from which we can substitute $B$ into \ref{r22} and get a relation of just $A$ and $A'$ as $A+rA'=\alpha$. This can also be written as
+
+Since we need this tensor to vanish, we obtain the following relation
+
+\begin{equation}
+     A'B+AB'=0.\nonumber
+\end{equation}
+
+by adding $B/A \times$Eq.\ref{r00} to Eq.\ref{r11}. This leads to $AB=\alpha=constant$, from which we substitute $B$ into \ref{r22} and get an explicit relation between $A$ and $A'$, namely $A+rA'=\alpha$. This can also be written as
+
  \begin{equation}
 \frac{d(r A)}{d r}=\alpha, \nonumber
 \end{equation}
-so that when integrating one can get expressions for both arbitrary constants,
+
+After integration,
+
 \begin{equation}
-A(r)=\alpha\left(1+\frac{k}{r}\right) \quad \text { and } \quad B(r)=\left(1+\frac{k}{r}\right)^{-1} \nonumber
+A(r)=\alpha\left(1+\frac{k}{r}\right) \quad \text { and } \quad B(r)=\left(1+\frac{k}{r}\right)^{-1}. \nonumber
 \end{equation}
-One can find the value of $\alpha$ and $k$ by considering the weak-field limit, getting that $k=-2 G M / c^{2}$ and $\alpha=c^{2}$. With all of this, the Schwarzschild metric for the empty spacetime outside a spherical body of mass M takes the form of: 
+
+The values of $\alpha$ and $k$ are found from the weak-field limit of the Einstein equations, obtaining that $k=-2 G M / c^{2}$ and $\alpha=c^{2}$. Therefore, the Schwarzschild metric or the metric for an empty spacetime outside a spherical body of mass $M$ takes the following form
+
 \begin{equation}
 d s^{2}=c^{2}\left(1-\frac{2 G M}{c^{2} r}\right) d t^{2}-\left(1-\frac{2 G M}{c^{2} r}\right)^{-1} d r^{2}-r^{2} d \theta^{2}-r^{2} \sin ^{2} \theta d \phi^{2}\nonumber
 \end{equation}
+
 which can be simplified by using $\mu=GM/c^2$
+
 \begin{equation}
-d s^{2}=\underbrace{c^{2}\left(1-\frac{2 \mu}{r}\right)}_{\textstyle g_{00}} d t^{2} \underbrace{-\left(1-\frac{2 \mu}{r}\right)^{-1}}_{\textstyle g_{11}} d r^{2}\underbrace{-r^{2}}_{\textstyle g_{22}} d \theta^{2}\underbrace{-r^{2} \sin ^{2}\theta}_{\textstyle g_{33}}  d \phi^{2}
+d s^{2}=\underbrace{c^{2}\left(1-\frac{2 \mu}{r}\right)}_{\textstyle g_{00}} d t^{2} \underbrace{-\left(1-\frac{2 \mu}{r}\right)^{-1}}_{\textstyle g_{11}} d r^{2}\underbrace{-r^{2}}_{\textstyle g_{22}} d \theta^{2}\underbrace{-r^{2} \sin ^{2}\theta}_{\textstyle g_{33}}  d \phi^{2}.
 \label{metric}
 \end{equation}
-This is the expression that will constantly be used from this point onwards.
+
 
 \section{Geodesics}
 
@@ -194,7 +222,7 @@ In the same fashion, we can define a Lagrangian $\mathcal{L} = g_{\mu \nu}  \dot
 
 which are equivalent to the geodesic equations. We will use the Lagrangian approach as it resembles basic Classical Mechanics and is easier to use. 
 
-Using Eq. {\color{red} REF}, the Lagrangian is given by 
+Using Eq.\ref{metric}, the Lagrangian is given by 
 
 \begin{equation} \label{Lagrangian}
     \mathcal{L} = c^{2}\left( 1-\frac{2\mu}{r} \right)\dot{t}^{2}-\left( 1-\frac{2\mu}{r}\right)^{-1}\dot{r}^{2}-r^{2}\left(\dot{\theta}^{2}+sen^{2}\theta\right)\dot{\phi}^{2}
@@ -253,7 +281,7 @@ Choosing the proper time $\tau$ as the affine parameter
     g_{\mu \nu} \dot{x^\mu} \dot{x^\nu} = c^2
 \end{equation*}
 
-Using Eq. {\color{red} REF} 
+Using Eq.\ref{metric} 
 
 \begin{equation} \label{massive-r-eq}
     c^2 \left( 1 - \frac{2 \mu}{r} \right) \dot{t}^2  - \left( 1 - \frac{2 \mu}{r} \right)^{-1} \dot{r}^2 - r\dot{\phi}^2  = c^2
@@ -428,177 +456,214 @@ On the other hand, from Eq. \ref{massive-r-tau}
  from these two expressions, it is clear that there exists no circular orbit at $r<3\mu$ which is consistent with the analysis made in previous sections. 
  
 \subsection{Massless particles}
-In the same way that the particles whit mass, for the motion of photons, the lagrange equations that were previously stated are used, these are the equations \textbf{(citar las ecuaciones aquí)}, where the interpretations of the constants is invariant. On the other hand, unlike massive particles for the photons the radial equations is replaced for by a first integral of itself of the form:
+
+It was mentioned in the previous section that Eqs.\ref{t-equation},\ref{r-equation},\ref{phi-equation} hold for both, massive and massless particles (photons). In this case, we will use the following expression as the first integral,
+
 \begin{equation*}
       g_{\mu \nu}\dot{x}^{\mu}\dot{x}^{\nu}&=&0
 \end{equation*}
-This expression differs from the proposal in the previous case because the affine parameter is not the proper time, in this case a parameter $(\sigma)$ such that it fulfills the characteristic $p^{\mu}=\dot{x}^{\mu}$ is used.\\
-Once the first integral is replaced in the equanions of motión \textbf{(citar las ecuaciones aquí)} , it follows that:
+
+to replace the the r-equation. Notice that this expression differs from the one of massive particles because the affine parameter is no longer the proper time but some parameter $\sigma$, such that it fulfills the characteristic $p^{\mu}=\dot{x}^{\mu}$ is used.
+
+Once the first integral is replaced in the equations of motion (Eqs.\ref{t-equation},\ref{r-equation},\ref{phi-equation}), it follows that:
+
 \begin{eqnarray}
-      \Big(1-\frac{2\mu}{r} \Big)\dot{t}&=&k \label{f0}\\
-      c^{2}\Big( 1- \frac{2\mu}{r}\Big) \dot{t}^{2}-\Big( 1- \frac{2\mu}{r}\Big)^{-1} \dot{r}^{2}-r^{2}\dot{\phi}^{2}&=&0\label{f1} \\
-       r^{2}\dot{\phi}&=&h\label{f2}
-\end{eqnarray}\\
-To solve this system of equations, equations \ref{f0} and \ref{f2} are taken and replaced in the equation \ref{f1} arriving at:
+      \Big(1-\frac{2\mu}{r} \Big)\dot{t}&=&k, \label{f0}\\
+      c^{2}\Big( 1- \frac{2\mu}{r}\Big) \dot{t}^{2}-\Big( 1- \frac{2\mu}{r}\Big)^{-1} \dot{r}^{2}-r^{2}\dot{\phi}^{2}&=&0\label{f1}, \\
+       r^{2}\dot{\phi}&=&h.\label{f2}
+\end{eqnarray}
+
+To solve this system, Eq.\ref{f0} and Eq.\ref{f2} are taken and replaced in Eq.\ref{f1},
+
 \begin{eqnarray*}
-      c^{2}\Big( 1- \frac{2\mu}{r}\Big) \dot{t}^{2}-\Big( 1- \frac{2\mu}{r}\Big)^{-1} \dot{r}^{2}-r^{2}\dot{\phi}^{2}&=&0\\
-      c^{2}\overbrace{\Big( 1- \frac{2\mu}{r}\Big)^{2} \dot{t}^{2}}^{k^{2}}- \dot{r}^{2}-\overbrace{r^{2}\dot{\phi}^{2}}^{h^2/r^{2}}\Big( 1- \frac{2\mu}{r}\Big)&=&0\\
-      \dot{r}^{2}+\frac{h^2}{r^{2}}\Big( 1- \frac{2\mu}{r}\Big)&=& c^{2}k^{2}
-\end{eqnarray*}\\
-In addition, you have to:
+      c^{2}\Big( 1- \frac{2\mu}{r}\Big) \dot{t}^{2}-\Big( 1- \frac{2\mu}{r}\Big)^{-1} \dot{r}^{2}-r^{2}\dot{\phi}^{2}&=&0,\\
+      c^{2}\overbrace{\Big( 1- \frac{2\mu}{r}\Big)^{2} \dot{t}^{2}}^{k^{2}}- \dot{r}^{2}-\overbrace{r^{2}\dot{\phi}^{2}}^{h^2/r^{2}}\Big( 1- \frac{2\mu}{r}\Big)&=&0,\\
+      \dot{r}^{2}+\frac{h^2}{r^{2}}\Big( 1- \frac{2\mu}{r}\Big)&=& c^{2}k^{2}.
+\end{eqnarray*}
+
+Additionally, using
+
 \begin{eqnarray*}
-      \frac{dr}{d\sigma}&=&\frac{dr}{d\phi}\overbrace{\frac{d\phi}{d\sigma}}^{\dot{\phi}=h/r^{2}}=\frac{dr}{d\phi}\frac{h}{r^{2}}
-\end{eqnarray*}\\
-Then
+      \frac{dr}{d\sigma}&=&\frac{dr}{d\phi}\overbrace{\frac{d\phi}{d\sigma}}^{\dot{\phi}=h/r^{2}}=\frac{dr}{d\phi}\frac{h}{r^{2}},
+\end{eqnarray*}
+
+We obtain,
+
 \begin{eqnarray}
-    \Big(\frac{dr}{d\phi}\frac{h}{r^{2}}\Big)^{2}+\frac{h^2}{r^{2}}\Big( 1- \frac{2\mu}{r}\Big)&=& c^{2}k^{2} \nonumber\\
-    \Big(\frac{dr}{d\phi}\frac{1}{r^{2}}\Big)^{2}+\frac{1}{r^{2}}\Big( 1- \frac{2\mu}{r}\Big)&=&\frac{c^{2}k^{2}}{h^{2}}\label{aste} 
-\end{eqnarray}\\
-Finally making a change of variable $u=1/r$ and deriving, we get that
+    \Big(\frac{dr}{d\phi}\frac{h}{r^{2}}\Big)^{2}+\frac{h^2}{r^{2}}\Big( 1- \frac{2\mu}{r}\Big)&=& c^{2}k^{2}, \nonumber\\
+    \Big(\frac{dr}{d\phi}\frac{1}{r^{2}}\Big)^{2}+\frac{1}{r^{2}}\Big( 1- \frac{2\mu}{r}\Big)&=&\frac{c^{2}k^{2}}{h^{2}}.\label{aste} 
+\end{eqnarray}
+
+Finally, let $u=1/r$, so 
+
 \begin{eqnarray}
     \frac{d^{2}u}{d\phi^{2}}+u-\frac{3GM}{c^{2}}u^{2}&=&0 \label{fr}
-\end{eqnarray}\\ 
-being the equation \ref{fr} the radial equation that defines the motion of the photons,This equation can be solved in a simple way by obtaining different graphs for different values of $\mu$ as shown in the figures \ref{rfes} and \ref{rfen}. in addition this equation it is valid to highlight two special cases, the radial motion and the rectilinear motion. 
-\begin{figure}[h]
+\end{eqnarray}
+
+is the radial equation that describes the motion of the photons. This equation can be solved numerically in a simple way for different values of $\mu$, as shown in the Figs.\ref{rfes},\ref{rfen}. In addition to this equation, it is worth highlighting two special cases, the radial  and the circular motion. 
+
+\begin{figure}[h!]
 \centering
 \subfigure[\label{rfes}Movement for $\mu=\frac{1}{6}$ ]{\includegraphics[width=0.495\textwidth]{Report/Images/3_foton_esc.png}}
 \subfigure[\label{rfen}movement for $\mu=1$]{\includegraphics[width=0.495\textwidth]{Report/Images/3_foton_en.png}}
-\caption{Solutions of the radial equation}
+\caption{Solutions of the radial equation for different values of $\mu$. The black dot represents the massive object curving the space-time whereas the blue line is the photon trajectory.}
 \end{figure}
 
-\subsubsection{Radial movement $(\dot{\phi}=0)$}
-Returning to equation \ref{f2} and conditioning to radial motion, we get that
+\subsubsection{Radial motion $(\dot{\phi}=0)$}
+
+Returning to Eq.\ref{f2} and conditioning it to radial motion, we get that
+
  \begin{eqnarray*}
        c^{2}\Big( 1- \frac{2\mu}{r}\Big) \dot{t}^{2}-\Big( 1-\frac{2\mu}{r}\Big)^{-1} \dot{r}^{2}&=&0\\
-       \pm  c\Big( 1- \frac{2\mu}{r}\Big)&=&\frac{dr}{dt}
+       \pm  c\Big( 1- \frac{2\mu}{r}\Big)&=&\frac{dr}{dt},
 \end{eqnarray*}
+
 whose solution is of the form
+
   \begin{eqnarray}
-       ct=\pm r\pm Ln\Big| \frac{r}{2\mu}-1 \Big|+const\label{frf}
+       ct=\pm r\pm Ln\Big| \frac{r}{2\mu}-1 \Big| + \text{const} \label{frf}.
  \end{eqnarray}
- For simplicity in this case we will use $cont=0$. from the equation \ref{frf} it can be observed that:
+ 
+ For simplicity, in this case we will use $\text{const}=0$. From the Eq.\ref{frf} we observe that
+
 \begin{itemize}
-    \item Is valid for outgoing photons $(+)$ an for incoming photons $(-)$.
-    \item if $t\rightarrow -t$ then the incoming photons become incoming and the same with incoming.
-    \item if $r \rightarrow \infty$ the linear term dominates over the logarithmic, obtaining $ct=r$ that is the form of the standard special-relativistic lightcone. This makes sense since when moving away from the object that curves space-time the geometry of the tends to become flat, more exactly it tends to the geometry of special relativity
-    \item if $r \rightarrow 2\mu$ then $ct\rightarrow \infty$ making the light cone completely vertical. The implications of this are better explained with the example of the observer who throws an object in a radial direction (Figure \ref{radm}), while the object is closer to $2\mu$ its cone of light is more vertical, but the cone of light defines the possible future locations of the object then the object would need an infinite time to reach $2\mu$. On the other hand, it also takes an infinite time for the observer to see the object at $2\mu$, since the limits of the light cone also define the movement of the photons emitted by the object.
+    \item It is valid for outgoing photons $(+)$ and for incoming photons $(-)$.
+    \item If $t\rightarrow -t$ then the outgoing photons become incoming and the same for the converse.
+    \item If $r \rightarrow \infty$ the linear term dominates over the logarithmic one, obtaining $ct=r$, which is the form of the standard special-relativistic light-cone. This makes sense since when the geometry becomes flat as the particle moves away from the massive body. More exactly, it tends to the geometry of special relativity (Minkowski space).
+    \item If $r \rightarrow 2\mu$ then $ct\rightarrow \infty$ making the light cone completely vertical. The implications of this limit are better explained by considering an observer who throws an object in the radial direction (See Fig.\ref{radm}), while the object is closer to $2\mu$ its cone of light becomes vertical, but the light-cone defines the possible future locations of the object, hence it would need an infinite time to reach $2\mu$. On the other hand, it also takes infinite time for the observer to see the object at $2\mu$, since the limits of the light-cone also define the motion of the photons emitted by the object.
 \end{itemize}
 
  \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.5\textwidth]{Report/Images/3_foton_radia.png}
-    \caption{{\color{red} ESTAAA}Illustration of the radial movement.}
+    \includegraphics[width=0.4\textwidth]{Report/Images/3_foton_radia.png}
+    \caption{Illustration of the radial motion in the spacetime.}
 \label{radm}
 \end{figure}
 
-\subsubsection{Circular movement $(\dot{r}=0)$}
-Using the radial equation (\ref{fr}) and imposing the condition of radius, verify how easy it is to get to
+\subsubsection{Circular motion $(\dot{r}=0)$}
+
+Using the radial equation (\ref{fr}) and imposing the condition of constant radius, it is not hard to show that
+
 \begin{eqnarray*}
-          R=3\mu=\frac{3GM}{c^{2}}
+          R=3\mu=\frac{3GM}{c^{2}},
 \end{eqnarray*}
-where $R$ is the only radius that allows a circular motion, $R$ being the only radius that allows a circular movement, this radius being too small a quantity so it is not observable for large objects, in the case of our sun we have $R \approx 4.5 Km$. Furthermore, it will later be shown that this orbit is extremely unstable.
+
+where $R$ is the only radius that allows circular motion, this radius is usually small, so it is not observable for large objects. In the case of our sun, we have $R \approx 4.5 Km$. It will later be shown that this orbit is extremely unstable.
 
 \subsubsection{Effective potential and orbits}
-Picking up the equation \ref{aste} it is obtained that
+
+Starting from Eq.\ref{aste}, we obtain that
+
 \begin{eqnarray}
-      \frac{1}{h^{2}}\dot{r}^{2}+\overbrace{\frac{1}{r^{2}}\Big( 1- \frac{2\mu}{r}\Big)}^{V_{eff}}&=& \overbrace{c^{2}k^{2}/h^{2}}^{1/b^{2}} \nonumber\\
-      \dot{r}^{2}+V_{eff}&=& \frac{1}{b^{2}} \label{Veff}
+      \frac{1}{h^{2}}\dot{r}^{2}+\overbrace{\frac{1}{r^{2}}\Big( 1- \frac{2\mu}{r}\Big)}^{V_{eff}}&=& \overbrace{c^{2}k^{2}/h^{2}}^{1/b^{2}}, \nonumber\\
+      \dot{r}^{2}+V_{eff}&=& \frac{1}{b^{2}}. \label{Veff}
 \end{eqnarray}
-    This effective potential is as shown in Figure \ref{fpot}, having a maximum value of $\frac{1}{ 27\mu^{2}}$ in $3\mu$, said maximum is an unstable equilibrium point and is located in the radius of the circular orbits, therefore these being unstable orbits.\\
- \begin{figure}[h!]
+    
+This effective potential (see Fig.\ref{fpot}) has a maximum value of $\frac{1}{ 27\mu^{2}}$ in $3\mu$, which is an unstable equilibrium point, thence it corresponds to a circular orbit. Therefore, these orbits are unstable.
+ 
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.65\textwidth]{Report/Images/3_poten.png}
-    \caption{Graph of effective potential.}
+    \caption{Graph of the effective potential that a massless particle undergoes in the curved geometry.}
 \label{fpot}
 \end{figure}
-Then, if we take equation \ref{aste} we can arrive at that
+
+Then, if we take Eq.\ref{aste} we arrive to
+
 \begin{eqnarray}
-\frac{dr}{d\phi}&=&r^{2}\Big(\frac{1}{b^{2}}-V_{eff}\Big)^{1/2}\label{b}
-\end{eqnarray}\\
-If the equation \ref{b} is observed, it can be deduced that
+\frac{dr}{d\phi}&=&r^{2}\Big(\frac{1}{b^{2}}-V_{eff}\Big)^{1/2}\label{b}.
+\end{eqnarray}
+
+Using Eq.\ref{b}, it can be deduced that
+
 \begin{itemize}
-    \item If $\frac{1}{b^{2}}<\frac{1}{27\mu^{2}}$ $\Rightarrow b>3\sqrt{3}\mu$  then there are going to be values of r in veff that are not allowed, therefore this type of trajectories are the ones that are attracted but do not fall within the massive object.
-    \item If $\frac{1}{b^{2}}>\frac{1}{27\mu^{2}}$ $\Rightarrow b<3\sqrt{3}\mu$ are the photons that are attracted and spiral down to the massive object.
+\item If $\frac{1}{b^{2}}<\frac{1}{27\mu^{2}}$ $\Rightarrow b>3\sqrt{3}\mu$  then there are values of $r$ in $V_{eff}$ that are not allowed, therefore this type of trajectories are the ones that are attracted but do not fall within the massive object.
+\item If $\frac{1}{b^{2}}>\frac{1}{27\mu^{2}}$ $\Rightarrow b<3\sqrt{3}\mu$ are the photons that are attracted and move in a spiral down to the massive object.
 \end{itemize}
-finally is necessary to physically characterize the constant b, for this we take the equation \ref{b} and see what happens if $r\rightarrow \infty$, arriving at
+
+Finally, it is necessary to give a physical interpretation to the constant $b$, for this we take the Eq.\ref{b} and see what happens if $r\rightarrow \infty$, arriving to
+
 \begin{eqnarray*}
-    \frac{d\phi}{dr}&=&\pm \frac{1}{r^{2}}b\\
-    \phi&=&\mp \frac{1}{r}b\\
+    \frac{d\phi}{dr}&=&\pm \frac{1}{r^{2}}b,\\
+    \phi&=&\mp \frac{1}{r}b.
 \end{eqnarray*}
-then, if $\phi << 1$ then
+
+Then, if $\phi << 1$ 
+
 \begin{eqnarray*}
-       sen(\phi)&=&\mp \frac{1}{r}b \\
-       rsen(\phi)=y&=&\mp b\\
+       \sin(\phi)&=&\mp \frac{1}{r}b, \\
+       r \sin(\phi)=y&=&\mp b.
 \end{eqnarray*}
-obtaining that b is the impact parameter of the photon, this is illustrated in the figure \ref{bp}
+
+Hence, $b$ is the impact parameter of the photon as illustrated in the Fig.\ref{bp}
+
  \begin{figure}[h!]
     \centering
     \includegraphics[width=0.65\textwidth]{Report/Images/3_foton_esc_b.png}
-    \caption{Illustration of the movement of a photon.}
+    \caption{Motion of photons in terms of the impact parameter $b$, which has the same interpretation as in scattering theory.}
 \label{bp}
 \end{figure}
+
 \subsubsection{Redshift in general relativity}
-To study the redshift under the Schwarzschild metric, we start by assuming an observer A with a 4-velocity $U_{E}(A)_{\mu}$ that launches a photon with 4-momentum $p_{\mu}$, this photon is seen by another observer B with a 4-speed $U_{R}(B)_{\mu}$ (this experiment mental is best illustrated in figure ref), then its energy can be calculated as:
+
+To study the redshift under the Schwarzschild metric, we start by assuming an observer $A$ with a 4-velocity $U_{E}(A)_{\mu}$ that releases a photon with 4-momentum $p_{\mu}$. This photon is seen by another observer $B$ with a 4-velocity $U_{R}(B)_{\mu}$ (this thought experiment is best illustrated in Fig.\ref{rs}). The energy can be calculated as:
+
 \begin{eqnarray*}
-          E(A)&=&u_{\mu}(A)p_{\mu}(A)\\
-          E(B)&=&u_{\mu}(A)p_{\mu}(B)\\
+          E(A)&=&u_{\mu}(A)p_{\mu}(A),\\
+          E(B)&=&u_{\mu}(A)p_{\mu}(B).\\
 \end{eqnarray*}
-then
+
+Then,
+
 \begin{eqnarray*}
-         \frac{E(A)}{E(B)} &=&\frac{u_{\mu}(A)p_{\mu}(A)}{u_{\mu}(A)p_{\mu}(B)}
+         \frac{E(A)}{E(B)} &=&\frac{u_{\mu}(A)p_{\mu}(A)}{u_{\mu}(A)p_{\mu}(B)}.
 \end{eqnarray*}
+
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.6\textwidth]{Report/Images/3_foton_redshift.png}
-    \caption{Redshift experiment illustration.}
+    \includegraphics[width=0.5\textwidth]{Report/Images/3_foton_redshift.png}
+    \caption{Redshift thought-experiment, where two observers and one photon are involved.}
 \label{rs}
 \end{figure}
-if we consider that both the emitter and the receiver are at rest, it follows that
-        \begin{eqnarray*}
-    c^{2}&=& g_{\mu nu} u^{\mu}u^{\nu} \\     
-            \frac{c}{\sqrt{g_{00}}}&=&u^{0}\\
-         \frac{\nu_{A}}{\nu_{B}} &=&\frac{p_{0}(A)}{p_{0}(B)}  \sqrt{\frac{g_{00}(B)}{g_{00}(A)}}
-    \end{eqnarray*}
-finally knowing that the moment moves in the path as a parallel transport and also having our first integral $p^{\mu}p_{\mu} = 0$, we arrive at that p is constant, obtaining that
+
+If we consider that both the emitter and the receiver are at rest, it follows that
 
         \begin{eqnarray*}
-         \frac{\nu_{A}}{\nu_{B}} &=&  \sqrt{\frac{g_{00}(B)}{g_{00}(A)}}
+    c^{2}&=& g_{\mu nu} u^{\mu}u^{\nu}, \\     
+            \frac{c}{\sqrt{g_{00}}}&=&u^{0},\\
+         \frac{\nu_{A}}{\nu_{B}} &=&\frac{p_{0}(A)}{p_{0}(B)}  \sqrt{\frac{g_{00}(B)}{g_{00}(A)}}.
     \end{eqnarray*}
+
+Finally, knowing that the momentum moves according to the parallel transport and bearing in mind our first integral $p^{\mu}p_{\mu} = 0$, we conclude that $p$ is constant and 
+
+        \begin{eqnarray*}
+         \frac{\nu_{A}}{\nu_{B}} &=&  \sqrt{\frac{g_{00}(B)}{g_{00}(A)}}.
+    \end{eqnarray*}
+
+
 
 \section{Black Holes}
-\subsection{Schwarzschild metric}
 
-This metric i'ts the first exact solution to Einstein field equations for a static, empty spatially isotropic spacetime outside a spherically symmetric body of mass M. In the same way, the Birkhoff's theorem states that the spacetime geometry outside a general spherically symmetric matter distribution is the Schwarzschild geometry.
-Based on the previously written, consider a body of mass $M$ and let $\mu = GM/c^2$, then the Schwarzschild metric it's given by the line element:
+\subsection{Regions and singularities of the Schwarzschild geometry}
 
-\begin{block}{}
-\begin{equation}
-	ds^2 = c^2 \left( 1 - \frac{2\mu}{r}\right) dt^2 - \left( 1 - \frac{2\mu}{r}\right)^{-1} dr^2 - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2 \label{2}
-\end{equation}
-\end{block}
-This line element is expressed on the Schwarzschild coordinates $(t,r,\theta,\phi)$ so we use this coordinates to label events in spacetime.\\
-I'ts easy to recognize the components of the metric tensor accord to the ussual expression for the line element:
-\begin{equation*}
-    ds^2 = g_{\mu \nu} x^\mu x^\nu
-\end{equation*}
-Let $\left( 1 - \frac{2\mu}{r}\right)^{-1}=a$, then: $g_{tt}=c^2a^{-1}$, $g_{rr}=-a$, $g_{\theta \theta}=-r^2$, $g_{\phi \phi}=-r^2sin{^2}\theta$.
+Regions on Schwarzschild geometry are determined by the hypersurface $r_s=2\mu$, which is known as the Schwarzschild radius. Then, let the exterior region be denoted by $(R_{\mathrm{I}})$: $r>r_s$ and the interior region by $(R_{\mathrm{II}})$: $r<r_s$.
 
+In general, the Schwarzschild radius lies deep within the body (for example, $r_s$ for the sun is much smaller than its radius). Compact bodies which have a radius similar to $r_s$ are object of study on this section.
 
-\subsection{Regions and singularities on Schwarzschild geometry}
-Regions on Schwarzschild geometry are determinated by the hypersurface $r_s=2\mu$ who is known as Schwarzschild radius. Then, the exterior region is $(R_{\mathrm{I}})$: $r>r_s$ and the interior region $(R_{\mathrm{II}})$: $r<r_s$.\\
-In general, the Schwarzschild radius lies deep within the body (for example, $r_s$ for the sun is much smaller than his radius). Compact bodies who has a radius similar to $r_s$ are the objects of studio on this section.\\
-To establish whether at some event P a
- coordinate $x^\mu$ is timelike, null or spacelike, let see how are the metric components on both regions (those have the information of the tangent vectors to the coordinates, $e^\mu$). For the first region $(R_{\mathrm{I}})$, $g_{tt}>0$ and $(g_{rr}, g_{\theta \theta}, g_{\phi \phi})<0$  thus the coordinate $t$ is timelike and the others are spacelike (t is the proper time measured by an observer at rest at infinity).  For the second region $(R_{\mathrm{II}})$ the metric components $(g_{tt}, g_{rr})$ change sign, therefore the coordinate $t$ is spacetime and $r$ is timelike. Thus, time and radial coordinates changes depending on the side respect of $r_s$.\\
-From the line element that describes the Schwarzschild geometry is evident that the metric is singular at $r=0$ and $r=2\mu=r_s$. To see how are the nature of these singularities (coordinate singularity or intrinsec singularity) we consider the physically meaningful geometric quantities that describes the spacetime manifold at any point, the curvature tensor $R_{\mu\nu\rho\sigma}$. Then, spacetime curvature
-is described covariantly by the components of this 4-tensor and its contractions. A powerfull tool that its derivated from the curvature tensor is the curvature scalar and its relevance lies in the fact that its value remains the same in all coordinate systems (because its a scalar). From the Schwarzschild metric, the curvature scalar at any point is given by:
+To establish whether at some event $P$ a coordinate $x^\mu$ is timelike, null or spacelike, let us see how the metric components are on both regions (those having information about the tangent vectors to the coordinates, $e^\mu$). For the first region $(R_{\mathrm{I}})$, $g_{tt}>0$ and $(g_{rr}, g_{\theta \theta}, g_{\phi \phi})<0$  thus, the coordinate $t$ is timelike and the others are spacelike (t is the proper time measured by an observer at rest at infinity).  For the second region $(R_{\mathrm{II}})$ the metric components $(g_{tt}, g_{rr})$ change sign, therefore, the coordinate $t$ is spacelike and $r$ is timelike. Thus, time and radial coordinates change depending on the region with respect to $r_s$.
+
+From the line element that describes the Schwarzschild geometry it is evident that the metric is singular at $r=0$ and $r=2\mu=r_s$. To see the nature of these singularities (coordinate singularity or intrinsic singularity) we consider the physically meaningful geometric quantities that describe the spacetime at any point, namely the curvature tensor $R_{\mu\nu\rho\sigma}$. Then, spacetime curvature
+is described covariantly by the components of this 4-tensor and its contractions. A powerful tool that its derived from the curvature tensor is the curvature scalar and its relevance lies on the fact that its value remains the same in all coordinate systems (because its a scalar). From the Schwarzschild metric, the curvature scalar at any point is given by:
+
 \begin{equation*}
     R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}=\frac{48\mu^2}{r^6}
 \end{equation*}
-This scalar is singular at $r=0$, then this point is an intrinsic singularity of the Schwarzschild geometry thus is a singularity on spacetime; at this point the curvature of spacetime becomes infinite and the metric (thus the spacetime) isn't well defined. On the other hand, this scalar isn't singular at $r_s$, then this point is a coordinate singularity and the spacetime curvature don't have a singularity on it, thus nothing is occurring in the intrinsic Schwarzschild geometry; this coordinate singularity of the Schwarzschild metric is a result of the coordinate system that we have chosen to use, then we can remove it by making appropriate transformations
-of coordinates where the resulting metric will still be a solution of the field equations.
+
+This scalar is singular at $r=0$, then this point is an intrinsic singularity of the Schwarzschild geometry, at this point the curvature of spacetime becomes infinite and the metric (thus the spacetime) is not well defined. On the other hand, this scalar is not singular at $r_s$, then this point is a coordinate singularity and the spacetime curvature does not have a singularity at it. Therefore, this coordinate singularity of the Schwarzschild metric is a result of the coordinate system that we have chosen to describe it, then we can remove it by making an appropriate transformation of coordinates, where the resulting metric will still be a solution of the field equations.
 
 \subsection{Radial photon worldlines in Schwarzschild coordinates}
-For a radially moving photon we obtained a solution for the movement equations that is given by:
+
+For a radially moving photon we obtained a solution for the motion equations that is given by
 
 \begin{equation}
 ct=\pm r\pm Ln\Big| \frac{r}{2\mu}-1 \Big|+cte \label{3}\\
@@ -812,29 +877,51 @@ The coordinate $r$ is defined implicitly by
 u^2-v^2=\left( \frac{2\mu}{r}-1\right)exp\left(-\frac{r}{2\mu}\right)
 \end{equation*}
 
-
 If $ds=d\theta=d\phi=0$ we obtain 
 \begin{eqnarray*}
     \frac{32\mu^3}{r}exp\left(\frac{r}{2\mu}\right)(dv^2-du^2)&=&0\\
     dv^2&=&du^2\\
     v&=&\pm u + cte
-\end{eqnarray*}
-
+\end{eqnarray*}\\
+Thus, the lightcone structure should look like that in Minkowski space. The last values represents straight lines at $\pm45^\circ$ to the axes.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.58\textwidth]{Report/Images/4bhkruskal.png}
     \caption{Spacetime diagram of the Schwarzschild geometry in Kruskal coordinates.}
 \label{fig3}
 \end{figure}
-
-
-
-
+We can see at this figure the intrinsic singularity, the event horizon, and the mencioned trajetories for a photon when this one passes through the first region to the second region.
+\begin{itemize}
+    \item Region I: exterior to the black hole.
+    \item Region II: interior to the black hole.
+    \item Region I': exterior to the white hole.
+    \item Region II': interior to the black hole.
+\end{itemize}
+As a conclution: The complete Schwarzschild geometry is completley covered by kruskal coordinates and consists of a black hole and white hole and two universes connected at their horizons by a
+wormhole. The black hole has a physical nature but the universe with white holes has a mathematical nature.
 
 
 \subsection{Gravitational collapse and black-hole formation}
+The possibility of black holes existence arises from the idea of gravitational collapse. Chandrasekhar realized that the more massive a white dwarf, the denser it must be and so the stronger the gravitational field. \begin{itemize}
+    \item The Chandrasekhar limit stablish a
+critical mass of about 1.4 solar masses for white dwarfs over, at this point gravity would
+overwhelm the degeneracy pressure.
+\item The Oppenheimer–Volkoff limit is a maximum mass above which no stable neutron-star configuration is possible and his value is $3$ solar masses. Thus, stars more massive than this limit should collapse (is spherically symmetric) then it must produce a Schwarzschild black hole.
+\end{itemize}
 
 \subsection{Hawking effect}
+Hawking stablish that black holes radiate
+continuously as a blackbody with a temperature inversely proportional to their mass.
+
+\begin{equation}
+    T=\frac{\hbar c^3}{8\pi k_b G M}
+\end{equation}
+\begin{itemize}
+    \item A particle falls into the black hole and the antiparticle escapes to infinity (or viceverse).
+    \item As seen by an observer at infinity, the black hole has emitted a particle , then the black hole’s mass has decreased as a consequence of the particle falling.\textbf{}
+\end{itemize}
+
+
 
 \printbibliography
 
