@@ -49,7 +49,7 @@ The general theory explained gravity from a geometrical approach instead of bein
 
 where the LHS accounts for the geometry of the space time whereas the RHS is the matter content of the space. Therefore, matter curves the space-time, modifying the geodesics, which are the paths followed by particles due to the least-action principle. 
 
-On the other hand, in 1916 Karl Schwarzschild found a solution of \ref{field} outside a spherical neutral and non-spinning mass \cite{1916SPAW.......189S}. The solution is shown in form of a metric that depends on several parameters that will be discussed in the next sections. The Schwarzschild metric explained how photons trajectories are affected by gravity even though they are massless. It also gave relativistic corrections to planetary motion in the form of elliptical precession and finally, introduced some properties of Black Holes. Thus, this theory contains a lot of interesting physical phenomena which will be discussed throughout this document. 
+On the other hand, in 1916 Karl Schwarzschild found a solution of \ref{field} outside a spherical neutral and non-spinning mass \cite{1916SPAW.......189S}. The solution is shown in the form of a metric that depends on several parameters that will be discussed in the next sections. The Schwarzschild metric explained how photons trajectories are affected by gravity even though they are massless. It also gave relativistic corrections to planetary motion in the form of elliptical precession and finally, introduced some properties of Black Holes. Thus, this theory contains a lot of interesting physical phenomena, which will be discussed throughout this document. 
 
 Finally, this document is based on \cite{hobson_efstathiou_lasenby_2006}, so the interested reader can refer to it for more details and problem sets. Further details about the numerical calculations shown throughout this document can be found in \url{https://github.com/alejandrogm668/Schwarzschild-Geometry.git}
 
@@ -63,7 +63,7 @@ To construct the metric for a spherically symmetric gravitational field, generat
 d s^{2}=g_{\mu \nu} d x^{\mu} d x^{\nu}\label{lineelement}.
 \end{equation}
 
-A static isotropic metric is needed due to the properties of the object. For an easy approach one should start endowing the metric with the spatial symmetries, which is more general. For this, one seeks after a line element that depends only on rotational invariants of the spacelike coordinates of $x^\mu$ and their differentials, such as
+A static isotropic metric is needed due to the properties of the object. For an easy approach, one should start endowing the metric with the spatial symmetries, which is more general. For this, one seeks after a line element that depends only on rotational invariants of the spacelike coordinates of $x^\mu$ and their differentials, such as
 
 \begin{equation}
 \vec{x} \cdot \vec{x}, \quad d \vec{x} \cdot d \vec{x}, \quad \vec{x} \cdot d \vec{x}\nonumber,
@@ -248,13 +248,13 @@ From Eq. \ref{Euler-Lagrange}, it follows that
     
 \end{itemize}
 
-where $k$ and $h$ are constants of motion as both $t$ and $\phi$ are cyclic coordinates. When a variable is cyclic, its conjugated momentum is conserved. Therefore, $h$ is the angular momentum and  $k$ is related to the energy of the orbit as follows
+where $k$ and $h$ are constants of motion, as both $t$ and $\phi$ are cyclic coordinates. When a variable is cyclic, its conjugated momentum is conserved. Therefore, $h$ is the angular momentum and  $k$ is related to the energy of the orbit as follows
 
 \begin{equation}
     k = \frac{E}{m_0 c^2}
 \end{equation}
 
-where $m_0$ is the test mass. On the other hand, we can take advantage of the spherical symmetry of the metric and focus our attention to the equator. $\theta = \pi / 2$ clearly satisfies the $\theta$-equation derived above. So, our set of differential equations reduces to 
+where $m_0$ is the test mass. On the other hand, we can take advantage of the spherical symmetry of the metric and focus our attention on the equator. $\theta = \pi / 2$ clearly satisfies the $\theta$-equation derived above. So, our set of differential equations reduces to 
 
     \begin{eqnarray}
         \left( 1 - \frac{2 \mu}{r} \right) \dot{t} = k \label{t-equation} \\
@@ -262,7 +262,7 @@ where $m_0$ is the test mass. On the other hand, we can take advantage of the sp
         r^2 \dot{\phi} = h \label{phi-equation}
     \end{eqnarray}
 
-The motion of any particle is in principle, governed by this set of equations. For some choice of parameters, they can be solved numerically and plotted even outside the equator (See Fig. \ref{fig:general_orbit})
+The motion of any particle is, in principle, governed by this set of equations. For some choice of parameters, they can be solved numerically and plotted even outside the equator (See Fig. \ref{fig:general_orbit})
 
 \begin{figure}[h!]
     \centering
@@ -273,7 +273,7 @@ The motion of any particle is in principle, governed by this set of equations. F
 
 Even though the general problem could be solved, there is still much physics to be explored. For the sake of simplicity, Eq. \ref{r-equation} is replaced by the first integral $g_{\mu \nu} \dot{x^\mu} \dot{x^\nu}$. The problem is not only simplified by introducing the first integral, but also split into two branches, orbits of massive particles and massless particles, which will be discussed in the next sections.
 
-\subsection{Massive particles}
+\subsection{Massive particles} \label{massive}
 
 Choosing the proper time $\tau$ as the affine parameter 
 
@@ -304,7 +304,7 @@ Inserting Eqs. \ref{t-equation} and \ref{phi-equation} into Eq. \ref{massive-r-e
     \dot{r}^2 + \frac{h^2}{r^2} \left( 1 - \frac{2\mu}{r}\right) - \frac{2\mu c^2}{r} = c^2 (k^2 - 1)
 \end{equation}
 
-Furthermore, we can determine $r$ as a function of $\phi$, i.e. find a direct differential equation for the trajectories. Starting from the chain rule 
+Furthermore, we can determine $r$ as a function of $\phi$, i.e., find a direct differential equation for the trajectories. Starting from the chain rule 
 
 \begin{equation*}
     \dot{r} = \frac{dr}{d\phi} \frac{d\phi}{d\tau} = \frac{h}{r^2} \frac{dr}{d\phi} 
@@ -368,12 +368,12 @@ In the same fashion, we can compare the trajectories described by Eq. \ref{massi
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\linewidth]{Presentations/Images/2_class_rel_orbit.png}
-    \caption{Numerical solution of the Newtonian and Relativistic orbits. The relativistic correction term of order $1/r^{3}$ leads to a precession of the orbit, so that the ellipses do not close but stat to shift.}
+    \caption{Numerical solution of the Newtonian and Relativistic orbits. The relativistic correction term of order $1/r^{3}$ leads to a precession of the orbit, so that the ellipses do not close but start to shift.}
     \label{fig:relnew}
 \end{figure}
 
 
-Finally, we can analyze two particular cases: circular orbits and radial motion, i.e. free fall. 
+Finally, we can analyze two particular cases: circular orbits and radial motion, i.e., free fall. 
 
 \subsubsection{Radial motion: free fall}
 
@@ -413,7 +413,7 @@ So, for large initial distances, $k \approx 1$ and Eq. \ref{massive-radialcase-m
     \frac{dr}{d\tau} = - \sqrt{\frac{2\mu c^2}{r}}
 \end{equation}
 
-where the negative sign accounts for the free fall, i.e. the distance decreases over time. Next, we integrate Eq. \ref{massive-radialcase-integrate} and find $r$ as a function of $\tau$, but a more interesting case is finding $r$ as a function of $t$. Using Eq. \ref{t-equation}
+where the negative sign accounts for the free fall, i.e., the distance decreases over time. Next, we integrate Eq. \ref{massive-radialcase-integrate} and find $r$ as a function of $\tau$, but a more interesting case is finding $r$ as a function of $t$. Using Eq. \ref{t-equation}
 
 \begin{equation} \label{massive-radialcase-integrate-time}
     \frac{dr}{dt} = \frac{dr}{d\tau} \frac{d\tau}{dt} = - \sqrt{2\mu c^2} r^{-3/2} (r - 2\mu)
@@ -455,7 +455,7 @@ On the other hand, from Eq. \ref{massive-r-tau}
  
  from these two expressions, it is clear that there exists no circular orbit at $r<3\mu$ which is consistent with the analysis made in previous sections. 
  
-\subsection{Massless particles}
+\subsection{Massless particles} \label{massless}
 
 It was mentioned in the previous section that Eqs.\ref{t-equation},\ref{r-equation},\ref{phi-equation} hold for both, massive and massless particles (photons). In this case, we will use the following expression as the first integral,
 
@@ -463,7 +463,7 @@ It was mentioned in the previous section that Eqs.\ref{t-equation},\ref{r-equati
       g_{\mu \nu}\dot{x}^{\mu}\dot{x}^{\nu}&=&0
 \end{equation*}
 
-to replace the the r-equation. Notice that this expression differs from the one of massive particles because the affine parameter is no longer the proper time but some parameter $\sigma$, such that it fulfills the characteristic $p^{\mu}=\dot{x}^{\mu}$ is used.
+to replace the r-equation. Notice that this expression differs from the one of massive particles because the affine parameter is no longer the proper time but some parameter $\sigma$, such that it fulfills the characteristic $p^{\mu}=\dot{x}^{\mu}$ is used.
 
 Once the first integral is replaced in the equations of motion (Eqs.\ref{t-equation},\ref{r-equation},\ref{phi-equation}), it follows that:
 
@@ -509,7 +509,7 @@ is the radial equation that describes the motion of the photons. This equation c
 \caption{Solutions of the radial equation for different values of $\mu$. The black dot represents the massive object curving the space-time whereas the blue line is the photon trajectory.}
 \end{figure}
 
-\subsubsection{Radial motion $(\dot{\phi}=0)$}
+\subsubsection{Radial motion $(\dot{\phi}=0)$} \label{sec_rad_phot}
 
 Returning to Eq.\ref{f2} and conditioning it to radial motion, we get that
 
@@ -642,285 +642,345 @@ Finally, knowing that the momentum moves according to the parallel transport and
 
 
 
-\section{Black Holes}
+\section{Black Holes}\label{bh}
 
 \subsection{Regions and singularities of the Schwarzschild geometry}
 
 Regions on Schwarzschild geometry are determined by the hypersurface $r_s=2\mu$, which is known as the Schwarzschild radius. Then, let the exterior region be denoted by $(R_{\mathrm{I}})$: $r>r_s$ and the interior region by $(R_{\mathrm{II}})$: $r<r_s$.
 
-In general, the Schwarzschild radius lies deep within the body (for example, $r_s$ for the sun is much smaller than its radius). Compact bodies which have a radius similar to $r_s$ are object of study on this section.
+In general, the Schwarzschild radius lies deep within the body (for example, $r_s$ for the sun is much smaller than its radius). Compact bodies which have a radius similar to $r_s$ are object of study in this section.
 
 To establish whether at some event $P$ a coordinate $x^\mu$ is timelike, null or spacelike, let us see how the metric components are on both regions (those having information about the tangent vectors to the coordinates, $e^\mu$). For the first region $(R_{\mathrm{I}})$, $g_{tt}>0$ and $(g_{rr}, g_{\theta \theta}, g_{\phi \phi})<0$  thus, the coordinate $t$ is timelike and the others are spacelike (t is the proper time measured by an observer at rest at infinity).  For the second region $(R_{\mathrm{II}})$ the metric components $(g_{tt}, g_{rr})$ change sign, therefore, the coordinate $t$ is spacelike and $r$ is timelike. Thus, time and radial coordinates change depending on the region with respect to $r_s$.
 
-From the line element that describes the Schwarzschild geometry it is evident that the metric is singular at $r=0$ and $r=2\mu=r_s$. To see the nature of these singularities (coordinate singularity or intrinsic singularity) we consider the physically meaningful geometric quantities that describe the spacetime at any point, namely the curvature tensor $R_{\mu\nu\rho\sigma}$. Then, spacetime curvature
-is described covariantly by the components of this 4-tensor and its contractions. A powerful tool that its derived from the curvature tensor is the curvature scalar and its relevance lies on the fact that its value remains the same in all coordinate systems (because its a scalar). From the Schwarzschild metric, the curvature scalar at any point is given by:
+From the line element that describes the Schwarzschild geometry, it is evident that the metric is singular at $r=0$ and $r=2\mu=r_s$. To see the nature of these singularities (coordinate singularity or intrinsic singularity) we consider the physically meaningful geometric quantities that describe the spacetime at any point, namely the curvature tensor $R_{\mu\nu\rho\sigma}$. Then, spacetime curvature
+is described covariantly by the components of this 4-tensor and its contractions. A powerful tool that it's derived from the curvature tensor is the curvature scalar, and its relevance lies on the fact that its value remains the same in all coordinate systems (because it's a scalar). From the Schwarzschild metric, the curvature scalar at any point is given by:
 
 \begin{equation*}
     R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}=\frac{48\mu^2}{r^6}
 \end{equation*}
-
-This scalar is singular at $r=0$, then this point is an intrinsic singularity of the Schwarzschild geometry, at this point the curvature of spacetime becomes infinite and the metric (thus the spacetime) is not well defined. On the other hand, this scalar is not singular at $r_s$, then this point is a coordinate singularity and the spacetime curvature does not have a singularity at it. Therefore, this coordinate singularity of the Schwarzschild metric is a result of the coordinate system that we have chosen to describe it, then we can remove it by making an appropriate transformation of coordinates, where the resulting metric will still be a solution of the field equations.
+\\
+This scalar is singular at $r=0$, then this point is an intrinsic singularity of the Schwarzschild geometry, at this point the curvature of spacetime becomes infinite and the metric (thus the spacetime) is not well-defined. On the other hand, this scalar is not singular at $r_s$, then this point is a coordinate singularity and the spacetime curvature does not have a singularity at it. Therefore, this coordinate singularity of the Schwarzschild metric is a result of the coordinate system that we have chosen to describe it, then we can remove it by making an appropriate transformation of coordinates, where the resulting metric will still be a solution of the field equations.
 
 \subsection{Radial photon worldlines in Schwarzschild coordinates}
 
-For a radially moving photon we obtained a solution for the motion equations that is given by
+From Sec.\ref{sec_rad_phot} a radially moving photon satisfies
+\\
 
 \begin{equation}
-ct=\pm r\pm Ln\Big| \frac{r}{2\mu}-1 \Big|+cte \label{3}\\
+ct=\pm r\pm Ln\Big| \frac{r}{2\mu}-1 \Big| + \text{const}, \label{3}
 \end{equation}
-
-where the minus sign corresponds to a photon that is incoming and the plus sign corresponds to a photon that is outgoing. When we use the transformation $t\rightarrow -t$, the outgoing and incoming photon paths are interchanged, and this is how the $t$ coordinates changes on both regions.\\
-The spacetime diagram show the $(r,ct)$-plane for fixed values of $\theta$ and $\Phi$ and on it we plot the paths of radially outgoing and incoming photons, with that the lightcone structure of the Schwarzschild solution its appreciable. The diagram will be the same for all other $\theta$ and $\Phi$ so each point $(r,ct)$ represents a $2$-sphere of area $4\pi r^2$.
 \\
+where the minus sign corresponds to an incoming photon and the plus sign corresponds to an outgoing photon. When we use the transformation $t\rightarrow -t$, the outgoing and incoming photon paths are interchanged.
+
+The spacetime diagram shows the $(r,ct)$-plane for fixed values of $\theta$ and $\phi$ and we plot on it the paths of radially outgoing and incoming photons, with that the light-cone structure of the Schwarzschild solution is appreciable. The diagram will be the same for all other $\theta$ and $\phi$ so each point $(r,ct)$ represents a $2$-sphere of area $4\pi r^2$.\\
+
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.58\textwidth]{Report/Images/4bhphotons.png}
+    \includegraphics[width=0.7\textwidth]{Report/Images/4bhphotons.png}
     \caption{Ligthcone structure of the Schwarzschild solution on Schwarzschild coordinates.}
-\label{fig3}
+\label{fig11}
 \end{figure}
-In the first region $(R_{\mathrm{I}})$:
-\begin{itemize}
-\item When $r\rightarrow \infty$ $\Rightarrow$ the term $r$ dominates upon the logarithm then we have $ct=r$ and the metric tends to the Minkowski metric of special relativity. For this large radius the gravitational field becomes weak and the curvature of spacetime isn't appreciable, that's the reason of how the spacetime becomes to be a plane spacetime. The ligthcone structure becomes that of Minkowski spacetime where outgoing and incoming light rays define straight lines of slope $\pm1$ in the diagram.
 
-\item When $r\rightarrow 2\mu$ $\Rightarrow$ The logarithm tends to $\infty$ thus $t\rightarrow \pm\infty$ where the plus sign corresponds to ingoing ligth rays and the minus sign to outgoint light rays. We can conclude that an incoming signal cross the Schwarzschild radius at an infinite time but this isn't visible on figure. On the other hand, the ligthcone it's getting narrower once we aproximmate to the Schwarzschild radius.\\
+In the first region $(R_{\mathrm{I}})$ we have the same properties described in Sec.\ref{sec_rad_phot}, whereas in the second region $(R_{\mathrm{II}})$
+
+\begin{itemize}
+  \item  Coordinates $t$ and $r$ reverse their character, then the light-cones flip their orientation by $90^{\circ}$. In this region, all photons must end up at $r=0$ and it follows that this point is a real singularity where the curvature of the Schwarzschild metric diverges (it is a point of infinite curvature). Once within the second region, all photons end up at an intrinsic singularity at $r=0$.
+  \item In this region, any massive particle will end up at the singularity because a timelike worldline must lie inside the forward light-cone at each point.
 
 \end{itemize}
-On second region $(R_{\mathrm{II}})$:
-\begin{itemize}
-  \item  Coordinates $t$ and $r$ reverse their character, then the lightcones flip their orientation by $90^{\circ}$. In this region, all photons must end up at $r=0$ and it follows that this point is a real singularity where the curvature of the Schwarzschild metric diverges (is a point of infinite curvature). Once within the second region  all the photons end up at a intrinsic singularity at $r=0$.
-  \item In this region, any massive particle
-will end up at the singularity because a timelike worldline must lie inside the forward light-cone at each point.
 
-\end{itemize}
-\subsection{Radial particle worldlines in Schwarzschild coordinates}
+\subsection{Radial massive particle worldlines in Schwarzschild coordinates}
 
-Consider an infalling particle released from rest at infinity. We can parameterize the particle worldline in terms of the propper time $\tau$, then the trajectory $r(\tau)$ is implicitly given by equation \ref{28}. On the other hand, we can parameterize in terms of the coordinate time $t$, so the trajectory $r(t)$ is implicitly given by equation \ref{29}. With those equations we can plot out the particle trajectory in the $(r,ct)-$plane and the resulting curve is shown in figure (aquí va). \\
-From the plot, we can see that the particle worldline has a singularity at $r=2\mu$ and that it takes an infinite coordinate time $t$ for the particle
-to cross the Schwarzschild radius. In terms of the proper time, the particle reaches $r_s$ at a finite $\tau$ and for his later values the particle worldline lies in the second region; on this region although $\tau$ continues to increase until $r=0$ is reached,  $t$ decreases along the particle worldline. Although the coordinate $t$ has a physically meaningful as $r\rightarrow \infty$, it's inappropriate for describing particle motion at second region.
+Consider an infalling particle released from rest at infinity. We can parameterize the particle's worldline in terms of the proper time $\tau$. Then, the trajectory $r(\tau)$ is implicitly given by Eq.\ref{28}. On the other hand, we can parameterize it in terms of the coordinate time $t$, so the trajectory $r(t)$ is implicitly given by Eq.\ref{29}. With those equations we can plot out the particle'a trajectory in the $(r,ct)-$plane and the resulting curve is illustrated in Fig\ref{fig12}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Report/Images/4bhparticles.png}
+    \caption{Trajectory of a radially infalling particle.}
+    \label{fig12}
+\end{figure}\\
+From this plot, we can see that the particle's worldline has a singularity at $r=2\mu$ and that it takes an infinite coordinate time $t$ for the particle to cross the Schwarzschild radius. In terms of the proper time, the particle reaches $r_s$ at a finite $\tau$ and for its later values, the particle's worldline lies in the second region. On this region, although $\tau$ continues to increase until $r=0$ is reached, $t$ decreases along the particle's worldline. Despite the coordinate $t$ has a physically meaningful interpretation as $r\rightarrow \infty$, it is inappropriate for describing particle motion at second region.\\
 
 \subsection{Eddington-Finkelstein coordinates}
 
-To relabel events in spacetime and remove coordinates singularities, which has resulted simply from choosing coordinates with a restricted domain of validity, we apply some coordinate transformation $x^{\mu}\rightarrow x^{'\mu}$. A possible different set of coordinates is given by the null worldlines of radially moving photons (null geodesics of photons) who is expressed on equation \ref{3}. We take the worldline who corresponds to an ingoing photon and we use the integration constant as the new coordinate, denoted by $p$, then the coordinate transformation is given by 
+To relabel events in spacetime and remove coordinate singularities, which have resulted simply from choosing coordinates with a restricted domain of validity, we apply some coordinate transformation $x^{\mu}\rightarrow x^{'\mu}$. A possible different set of coordinates is given by the null worldlines of radially moving photons (null geodesics of photons) which are expressed on Eq.\ref{3}. We take the worldline corresponding to an ingoing photon and use the integration constant as the new coordinate, denoted by $p$. Then, the coordinate transformation is given by 
 
 \begin{equation}
-    p= ct + r + Ln\Big| \frac{r}{2\mu}-1 \Big|\label{4}
+    p= ct + r + Ln\Big| \frac{r}{2\mu}-1 \Big|.\label{4}
 \end{equation}
 
-We will change the coordinate $t$ for $p$ who is known as the advanced time parameter and is a null coordinate; additionally, $p$ is constant along the entire geodesic of the radially ingoing photon so that make it an optimus coordinate to describe every place where the worldline penetrates.\\
-Differentiating \ref{4}: 
+We will change the coordinate $t$ with $p$, which is known as the advanced time parameter and is a null coordinate. Additionally, $p$ is constant along the entire geodesic of the radially ingoing photon, making it an optimal coordinate to describe every place where the worldline penetrates.
+
+Differentiating Eq.\ref{4}: 
+
 \begin{equation*}
-    dp= cdt +\frac{r}{r-2\mu}dr=cdt+adr 
+    dp= cdt +\frac{r}{r-2\mu}dr=cdt+adr.
 \end{equation*}
-To obtain the correspondent metric for this coordinates, called ingoing Eddington-Finkelstein coordinates, we obtain an expression for $dt^2$ from the last equation:
+
+To obtain the metric for these coordinates, the so-called ingoing Eddington-Finkelstein coordinates, we obtain an expression for $dt^2$ from the last equation, namely
+
 \begin{equation*}
-    dt= \frac{1}{c} (dp-adr)
+    dt= \frac{1}{c} (dp-adr),
 \end{equation*}
+
 \begin{equation*}
-    dt^2= \frac{1}{c^2} (dp-adr)^2
+    dt^2= \frac{1}{c^2} (dp-adr)^2.
 \end{equation*}
-Replacing this element on Schwarzschild metric:
-\\
+
+Replacing this element on the Schwarzschild's metric:
+
 \begin{eqnarray*}
-    	ds^2 &=&c^2a^{-1}\frac{1}{c^2} (dp-adr)^2 - a dr^2 - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2\\
-    	ds^2 &=& a^{-1}(dp^2-2apdpdr+a^2dr^2) - a dr^2 - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2\\
-    	ds^2 &=& a^{-1}dp^2-2dpdr+adr^2- a dr^2 - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2\\ 
-    	ds^2 &=& a^{-1}dp^2-2dpdr-  r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2
+    	ds^2 &=&c^2a^{-1}\frac{1}{c^2} (dp-adr)^2 - a dr^2 - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2,\\
+    	ds^2 &=& a^{-1}(dp^2-2apdpdr+a^2dr^2) - a dr^2 - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2,\\
+    	ds^2 &=& a^{-1}dp^2-2dpdr+adr^2- a dr^2 - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2,\\ 
+    	ds^2 &=& a^{-1}dp^2-2dpdr-  r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2.
 \end{eqnarray*}
-\\
+
 It follows that:
+
 \begin{equation}
-ds^2 =\left( 1 - \frac{2\mu}{r}\right)dp^2-2dpdr- r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2 \label{5}
+ds^2 =\left( 1 - \frac{2\mu}{r}\right)dp^2-2dpdr- r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2 \label{5}.
 \end{equation}
-We obtained the line element in terms of the parameter $p$ and is evident that the line elemenet is now regular at $r_s$. Thus, the metric is regular for the whole range $0<r<\infty$ which is the coordinate range for an infalling photon geodesic. In this order of ideas, we have two solutions for Einstein field equations on different coordinates where the given by the equation \ref{2}  is valid on the range of coordinates range $2\mu<r<\infty$ and the metric given by the equation \ref{5} is valid for the whole range $0<r<\infty$.
-\\We can obtain the paths of null geodesics from \ref{5} taken $ds=d\theta=d\Phi=0$, thus:
+
+We obtained the line element in terms of the parameter $p$ and it is evident that the line element is now regular at $r_s$. Thus, the metric is regular for the whole range $0<r<\infty$ which is the coordinate range for an infalling photon geodesic. In this order of ideas, we have two solutions for Einstein field equations on different coordinates, where the one given by Eq.\ref{metric} is valid in the range $2\mu<r<\infty$ and the metric given by Eq.\ref{5} is valid for the whole range $0<r<\infty$.
+
+On the other hand, we can obtain the paths of null geodesics from Eq.\ref{5} taking $ds=d\theta=d\Phi=0$, thus:
+
 \begin{eqnarray*}
-\left( 1 - \frac{2\mu}{r}\right)dp^2-2dpdr&=&0\\
-\left( 1 - \frac{2\mu}{r}\right)\frac{dp^2}{dr^2}-2\frac{dp}{dr}&=&0\\
-\frac{dp}{dr}\left[\left( 1 - \frac{2\mu}{r}\right)\frac{dp}{dr}-2\right]&=&0
+\left( 1 - \frac{2\mu}{r}\right)dp^2-2dpdr&=&0,\\
+\left( 1 - \frac{2\mu}{r}\right)\frac{dp^2}{dr^2}-2\frac{dp}{dr}&=&0,\\
+\frac{dp}{dr}\left[\left( 1 - \frac{2\mu}{r}\right)\frac{dp}{dr}-2\right]&=&0.
 \end{eqnarray*}
+
 This equation has two solutions:
 
 \begin{eqnarray*}
-\frac{dp}{dr}&=&0  \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \Rightarrow \ \ \ \  p=cte \\
+\frac{dp}{dr}&=&0  \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \Rightarrow \ \ \ \  p=\text{const}, \\
 \frac{dp}{dr}&=&2\left( 1 - \frac{2\mu}{r}\right)^{-1}
- \ \ \ \ \ \Rightarrow \ \ \ \ \ p=2r+4\mu Ln\Big| \frac{r}{2\mu}-1 \Big|+cte 
+ \ \ \ \ \ \Rightarrow \ \ \ \ \ p=2r+4\mu Ln\Big| \frac{r}{2\mu}-1 \Big|+ \text{const}. 
 \end{eqnarray*} 
 
-The first solution corresponds to incoming radial null geodesics and the second one to outgoing radial null geodesics. These solutions are valid and congruents with the coordinates construction.\\
+The first solution corresponds to incoming radial null geodesics and the second one to outgoing radial null geodesics. These solutions are valid and consistent with the coordinates construction.
 
-We can get a timelike coordinate $t'$ from the null coordinate $p$ and make a new coordinates system wich is called advanced Eddington-Finkelstein coordinates $(t',r,\theta,\phi)$. These coordinate $t'$ is given by:
+We can get a timelike coordinate $t'$ from the null coordinate $p$ and make a new coordinates system, which is called the advanced Eddington-Finkelstein coordinates $(t',r,\theta,\phi)$. Coordinate $t'$ is given by:
 
 \begin{equation}
-    ct'= p-r=ct+2\mu Ln\Big| \frac{r}{2\mu}-1 \Big|
+    ct'= p-r=ct+2\mu Ln\Big| \frac{r}{2\mu}-1 \Big|.
 \end{equation}
-Differentiating: 
+
+Differentiating:
+
 \begin{equation*}
-    dt'= dt +\frac{2\mu}{c}\frac{1}{r-2\mu}dr=dt+\frac{2\mu}{c}\frac{a}{r}dr 
+    dt'= dt +\frac{2\mu}{c}\frac{1}{r-2\mu}dr=dt+\frac{2\mu}{c}\frac{a}{r}dr.
 \end{equation*}
-To obtain the correspondent metric for this coordinates we obtain an expression for $dt^2$ from the last equation:
+
+To obtain the corresponding metric for these coordinates, we obtain an expression for $dt^2$ from the last equation:
+
 \begin{eqnarray*}
-    dt&=& dt' -\frac{2\mu}{c}\frac{a}{r}dr \\
-    dt^{2}&=& \left(dt' -\frac{2\mu}{c}\frac{a}{r}dr\right)^2
+    dt&=& dt' -\frac{2\mu}{c}\frac{a}{r}dr, \\
+    dt^{2}&=& \left(dt' -\frac{2\mu}{c}\frac{a}{r}dr\right)^2.
 \end{eqnarray*}
 
-Replacing this element on Schwarzschild metric:
+Replacing this element on the Schwarzschild's metric:
 
 \begin{eqnarray*}
-    	ds^2 &=&c^2a^{-1}\left(dt' -\frac{2\mu}{c}\frac{a}{r}dr\right)^2 - a dr^2 - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2\\
-    	ds^2 &=& c^2a^{-1}\left(dt'^2 -\frac{4\mu a}{cr}dt'dr+\left(\frac{2\mu a}{cr}\right)^2dr^2\right) - a dr^2 - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2\\
-    	ds^2 &=& c^2a^{-1}dt'^2- \frac{4\mu c}{r}dt'dr+\left((2\mu)^2\frac{a}{r^2}-a \right)dr^2- r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2
+    	ds^2 &=&c^2a^{-1}\left(dt' -\frac{2\mu}{c}\frac{a}{r}dr\right)^2 - a dr^2 - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2,\\
+    	ds^2 &=& c^2a^{-1}\left(dt'^2 -\frac{4\mu a}{cr}dt'dr+\left(\frac{2\mu a}{cr}\right)^2dr^2\right) - a dr^2 - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2,\\
+    	ds^2 &=& c^2a^{-1}dt'^2- \frac{4\mu c}{r}dt'dr+\left((2\mu)^2\frac{a}{r^2}-a \right)dr^2- r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2.
 \end{eqnarray*}
 
 Making some algebra on the third term of the last equation, we obtain the line element:
 
 \begin{equation}
-    	ds^2 &=& c^2\left( 1 - \frac{2\mu}{r}\right)dt'^2- \frac{4\mu c}{r}dt'dr-\left( 1 + \frac{2\mu}{r}\right)dr^2- r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2
+    	ds^2 &=& c^2\left( 1 - \frac{2\mu}{r}\right)dt'^2- \frac{4\mu c}{r}dt'dr-\left( 1 + \frac{2\mu}{r}\right)dr^2- r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2.
 \end{equation}
 
-The line element on advanced Eddington-Finkelstein coordinates $(t',r,\theta,\phi)$ is regular for the whole range $0<r<\infty$ and under the tranformation 
-$t'\rightarrow -t'$ the second term changes sign (the line element isn't invariant under the transformation). The regularity implicates that both regions are connected. Incoming and outgoing photon worldlines on this coordinates can be deduced by equation \ref{6} and the obtained for the paths of null geodesics given by $p$ for outgoing and incoming photons. 
+The line element on advanced Eddington-Finkelstein coordinates $(t',r,\theta,\phi)$ is regular for the whole range $0<r<\infty$ and under the transformation $t'\rightarrow -t'$ the second term changes sign (the line element is not invariant under this transformation). The regularity implies that both regions are connected.
+
 \begin{eqnarray*}
-    	ct'&=&p-r=cte-r\\
-    	ct'&=&p-r=r+4\mu Ln\Big| \frac{r}{2\mu}-1 \Big|+cte 
+    	ct'&=&p-r=\text{const}-r,\\
+    	ct'&=&p-r=r+4\mu Ln\Big| \frac{r}{2\mu}-1 \Big|+\text{const}. 
 \end{eqnarray*}
-The first equation corresponds to ingoing photons and the second one for outgoing photons. Let see the spacetime diagram of the Schwarzschild geometry in advanced Eddington–Finkelstein coordinates with figure \ref{fig11}.
+
+The first equation corresponds to ingoing photons and the second one for outgoing photons. Let us see the spacetime diagram of the Schwarzschild geometry in advanced Eddington–Finkelstein coordinates (Fig.\ref{fig13}).
+
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.57\textwidth]{Report/Images/4bhfinkelstein.png}
     \caption{Ligthcone structure of the Schwarzschild solution on advanced Eddington-Finkelstein coordinates.} 
-\label{fig11}
-\end{figure}\\
-The equation for incoming photons corresponds to a straight line who makes an angle of $45^\circ$with the $r-$axis and is valid for the whole range $0<r<\infty$. On this way, the photon geodesics are continuous straight lines across $r_s$. On these coordinates, the radial trajectory of an infalling particle or photon is continuous but the outgoing null rays are discontinuous at the Schwarzschild radius. The lightcone structure changes at the boundary of Schwarzschild radius, there the future is directed towards the singularity thus once a particle crosses this radius it must fall to the singularity. Another evident phenom is that any particle (massless or not) who starts at second region cannot escape to the  first region, on this sense, the Schwarzschild radius defines an event horizon, a boundary of no return. We can conclude by this definition that a compact object that has an event horizon is called a black hole.\\
+\label{fig13}
+\end{figure}
 
-We can obtain a new coordinate system based on the worldlines of radially outgoing photons. Analogously to the last construction, we introduce a new null coordinate $q$, wich is known as the retarded time parameter, defined by:
+The equation for incoming photons corresponds to a straight line that makes an angle of $45^\circ$ with respect to the $r-$axis and it is valid for the whole range $0<r<\infty$. On this way, the photon geodesics are continuous straight lines across $r_s$. In these coordinates, the radial trajectory of an infalling particle or photon is continuous but the outgoing null rays are discontinuous at the Schwarzschild radius. The lightcone structure changes at the boundary (Schwarzschild radius), there the future is directed towards the singularity thus, once a particle crosses this radius it must fall to the singularity. Another evident phenomenon is that any particle (massless or not) that starts at the second region, cannot escape to the first region, in this sense, the Schwarzschild radius defines an event horizon, a boundary of no return. We can conclude by this definition, that a compact object that has an event horizon is called a black hole.
+
+We can obtain a new coordinate system based on the worldlines of radially outgoing photons. Analogously to the previous construction, we introduce a new null coordinate $q$, which is known as the retarded time parameter, defined by:
+
 \begin{equation}
-    q= ct - r - Ln\Big| \frac{r}{2\mu}-1 \Big|\label{46}
+    q= ct - r - Ln\Big| \frac{r}{2\mu}-1 \Big|.\label{46}
 \end{equation}
-Following a procedure similar to that used for $p$ we obtain the line element in terms of $q$, wich is regular for the whole range $0<r<\infty$ :
+
+Following a procedure similar to the one used for $p$, we obtain the line element in terms of $q$, which is regular for the whole range $0<r<\infty$:
+
 \begin{equation}
-ds^2 =\left( 1 - \frac{2\mu}{r}\right)dq^2+2dqdr- r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2 \label{5}
+ds^2 =\left( 1 - \frac{2\mu}{r}\right)dq^2+2dqdr- r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2. \label{5}
 \end{equation}
+
 Similarly, we obtain a timelike coordinate $t^{''}$ defined by
+
 \begin{equation}
-    ct''= q+r=ct-2\mu Ln\Big| \frac{r}{2\mu}-1 \Big|\label{6}
+    ct''= q+r=ct-2\mu Ln\Big| \frac{r}{2\mu}-1 \Big|.\label{6}
 \end{equation}
-The coordinates $(t'',r,\theta,\phi)$ are called retarded Eddington–Finkelstein coordinates. On this coordinates appears a mathametical object who is called a white hole and corresponds to the second region (where we found a white hole singularity) and the ingoing null rays are discontinuous. Since the original coordinates covered only a part of the full Schwarzschild geometry, it's necessary introduce new coordinates to extend the solution. Thus, the advanced Eddington–Finkelstein coordinates extend the solution into the part of the manifold that constitutes a black hole, whereas the retarded Eddington–Finkelstein coordinates extend the solution into a different part of the manifold, corresponding to a white hole. 
+
+The coordinates $(t'',r,\theta,\phi)$ are called retarded Eddington–Finkelstein coordinates. On these coordinates, there appears a mathematical object that is called a white hole and corresponds to the second region (where we found a white hole singularity) and the ingoing null rays are discontinuous. Since the original coordinates covered only a part of the full Schwarzschild geometry, it is necessary to introduce new coordinates to extend the solution. Thus, the advanced Eddington–Finkelstein coordinates extend the solution to the part of the manifold that constitutes a black hole, whereas the retarded Eddington–Finkelstein coordinates extend the solution to a different part of the manifold, corresponding to a white hole. 
 
 \subsection{Kruskal coordinates}
-Since the Eddington–Finkelstein coordinates don't covered the entire geometry, we are able to introduce a coordinates system who can cover the full Schwarzschild geometry. On this way, we take the difference between the advanced coordinate $p$ and the retarded coordinate $q$ as a transformation for the coordinate $r$, it follows that:
-%On these coordinates,the incoming and outgoing radial photons geodesics are continuous straight lines
+
+Since the Eddington–Finkelstein coordinates do not cover the entire geometry, we introduce a coordinate system that covers the full Schwarzschild geometry. On this way, we interpret the difference between the advanced coordinate $p$ and the retarded coordinate $q$ as a transformation for the coordinate $r$, it follows that
+
 \begin{equation*}
-    \frac{1}{2}(p-q)=r+2\mu Ln\Big| \frac{r}{2\mu}-1 \Big|
+    \frac{1}{2}(p-q)=r+2\mu Ln\Big| \frac{r}{2\mu}-1 \Big|.
 \end{equation*}
-Taking the sum between $p$ and $q$, we have the transformation for the coordinate $t$, thus:
+
+Taking the sum between $p$ and $q$, we have the transformation for the coordinate $t$, thus
+
 \begin{equation}
-    \frac{1}{2}(p+q)=ct \label{50}
+    \frac{1}{2}(p+q)=ct. \label{50}
 \end{equation}
-To obtain the correspondent metric for this coordinates we obtain an expression for $cdt^2$ and for $dr^2$ from the last equations:
+
+To obtain the corresponding metric for these coordinates, we obtain an expression for $cdt^2$ and for $dr^2$ from the last equations:
+
 \begin{eqnarray*}
-dr&=& \frac{1}{2}a^{-1}(dp-dq)\\
-dr^2&=& \frac{1}{4}a^{-2}(dp-dq)^2\\
-    cdt&=& \frac{1}{2}(dp+dq) \\
-    dt^{2}&=& \frac{1}{c^{2}4}(dp+dq)^2
+dr&=& \frac{1}{2}a^{-1}(dp-dq),\\
+dr^2&=& \frac{1}{4}a^{-2}(dp-dq)^2,\\
+    cdt&=& \frac{1}{2}(dp+dq), \\
+    dt^{2}&=& \frac{1}{c^{2}4}(dp+dq)^2.
 \end{eqnarray*}
 
-Replacing those elements on Schwarzschild metric:
+Replacing those elements on the Schwarzschild's metric:
+
 \begin{eqnarray*}
-    	ds^2 &=&c^2a^{-1}\frac{1}{c^{2}4}(dp+dq)^2-a \frac{1}{4}a^{-2}(dp-dq)^2 - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2\\
-    	ds^2 &=&a^{-1}\frac{1}{4}(dp^2+dpdq+dq^2)- \frac{1}{4}a^{-1}(dp^2-dpdq+dq^2) - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2\\
-    	ds^2 &=&a^{-1}\frac{1}{4}(dp^2+dpdq+dq^2)- \frac{1}{4}a^{-1}(dp^2-dpdq+dq^2) - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2\\
-    		ds^2 &=&a^{-1}\frac{1}{2}dpdq+ \frac{1}{2}a^{-1}dpdq - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2\\
+    	ds^2 &=&c^2a^{-1}\frac{1}{c^{2}4}(dp+dq)^2-a \frac{1}{4}a^{-2}(dp-dq)^2 - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2,\\
+    	ds^2 &=&a^{-1}\frac{1}{4}(dp^2+dpdq+dq^2)- \frac{1}{4}a^{-1}(dp^2-dpdq+dq^2) - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2,\\
+    	ds^2 &=&a^{-1}\frac{1}{4}(dp^2+dpdq+dq^2)- \frac{1}{4}a^{-1}(dp^2-dpdq+dq^2) - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2,\\
+    		ds^2 &=&a^{-1}\frac{1}{2}dpdq+ \frac{1}{2}a^{-1}dpdq - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2.\\
 \end{eqnarray*}
-We obtain the line element in the coordinates $(p,q,\theta,\phi)$:
-\begin{equation}
-    ds^2&=& \left( 1 - \frac{2\mu}{r}\right)dpdq - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2
-\end{equation}
-For fixed values of $\theta,\phi$ we have the $2-$space defined by the simple metric:
-\begin{equation}
-    ds^2&=& \left( 1 - \frac{2\mu}{r}\right)dpdq
-\end{equation}
-We transform the null coordinates $p$ and $q$ to new coordinates $(ct, r^*)$, where the first one is given by \ref{50} and the second one by:
-\begin{equation*}
-    r^*=\frac{1}{2}(p-q)=r+2\mu Ln\Big| \frac{r}{2\mu}-1 \Big|
-\end{equation*}
-$r*$ is a radial space-like coordinate who is called the tortoise coordinate. Following a similar construction as the last one, the $2-$space metric follows that:
-\begin{equation}
-    ds^2&=& \left( 1 - \frac{2\mu}{r}\right)(c^2dt^2-dr^{*2})=\Omega^2(x)\eta_{\mu\nu}dx^\mu dx^\nu
-\end{equation}
-This line element has the same form as that of a Minkowski $2-$space multiplied by a conformal scaling factor $\Omega^2(x)$ who has the information about spacetime curvature. On this sense, the lightcone structure doesn´t change, it looks like that in Minkowski space. Thus, in a spacetime diagram in $(ct, r*)$ coordinates, both outgoing and incoming radial null geodesics are straight lines with slope $\pm1$.\\
-Since the factor $a^{-1}$ persists, we have to remove it with another transformation of the form $p^*(p)$ and $q^*(q)$ so the line element follows that:
-\begin{equation}
-    ds^2&=& \left( 1 - \frac{2\mu}{r}\right)\frac{dp}{dp^*}\frac{dq}{dq^*}dp^*dq^*
-\end{equation}
-Kruskal removes the factor choosing the functions  $p^*(p)$ and $q^*(q)$ as:
-\begin{eqnarray}
-p^*&=&exp\left(\frac{p}{4\mu}\right)\\
-q^*&=&-exp\left(-\frac{q}{4\mu}\right)
-\end{eqnarray}
-Differentiating we can obtain the correspondent line element:
-\begin{equation}
-    ds^2&=& \frac{32\mu^3}{r}exp\left(-\frac{r}{2\mu}\right)dp^*dq^*
-\end{equation}
-On this metric is evident that we have removed the coordinate singularity. Finally, to obtain the kruskal coordinates we define a timelike variable $v$
-and a spacelike variable $u$ by:
 
-\begin{eqnarray}
-    v&=&\frac{1}{2}(p^*+q^*)\\
-    u&=&\frac{1}{2}(p^*-q^*)
-\end{eqnarray}
-Following the usual process, we obtain the line element for the Schwarzschild geometry in Kruskal coordinates $(v,u,\theta,\phi$ 
+We obtain the line element in the coordinates $(p,q,\theta,\phi)$
+
 \begin{equation}
-    ds^2&=& \frac{32\mu^3}{r}exp\left(-\frac{r}{2\mu}\right)(dv^2-du^2)- r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2
+    ds^2&=& \left( 1 - \frac{2\mu}{r}\right)dpdq - r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2.
 \end{equation}
-The coordinate $r$ is defined implicitly by
+
+For fixed values of $\theta,\phi$ we have the $2-$space defined by the simple metric
+
+\begin{equation}
+    ds^2&=& \left( 1 - \frac{2\mu}{r}\right)dpdq.
+\end{equation}
+
+We transform the null coordinates $p$ and $q$ to new coordinates $(ct, r^*)$, where the first one is given by Eq.\ref{50} and the second one by
+
 \begin{equation*}
-u^2-v^2=\left( \frac{2\mu}{r}-1\right)exp\left(-\frac{r}{2\mu}\right)
+    r^*=\frac{1}{2}(p-q)=r+2\mu Ln\Big| \frac{r}{2\mu}-1 \Big|,
 \end{equation*}
 
-If $ds=d\theta=d\phi=0$ we obtain 
+where $r*$ is a radial space-like coordinate called the tortoise coordinate. Besides, following a similar construction as in the last case, the $2-$space metric is
+
+\begin{equation}
+    ds^2&=& \left( 1 - \frac{2\mu}{r}\right)(c^2dt^2-dr^{*2})=\Omega^2(x)\eta_{\mu\nu}dx^\mu dx^\nu .
+\end{equation}
+
+This line element has the same form as that of a Minkowski $2-$space multiplied by a conformal scaling factor $\Omega^2(x)$ that has information about spacetime curvature. On this sense, the lightcone structure does not change, but it looks like the one of Minkowski space. Thus, in a spacetime diagram with $(ct, r*)$ coordinates, both outgoing and incoming radial null geodesics are straight lines with slope $\pm1$.
+
+Since the factor $a^{-1}$ persists, we have to remove it with another transformation of the form $p^*(p)$ and $q^*(q)$, so the line element becomes
+
+\begin{equation}
+    ds^2&=& \left( 1 - \frac{2\mu}{r}\right)\frac{dp}{dp^*}\frac{dq}{dq^*}dp^*dq^*.
+\end{equation}
+
+Kruskal removes the factor by choosing the functions $p^*(p)$ and $q^*(q)$ as follows
+
+\begin{eqnarray}
+p^*&=&exp\left(\frac{p}{4\mu}\right),\\
+q^*&=&-exp\left(-\frac{q}{4\mu}\right).
+\end{eqnarray}
+
+Differentiating, we can obtain the correspondent line element
+
+\begin{equation}
+    ds^2&=& \frac{32\mu^3}{r}exp\left(-\frac{r}{2\mu}\right)dp^*dq^*.
+\end{equation}
+
+On this metric, it is evident that we have removed the coordinate singularity. Finally, to obtain the kruskal coordinates we define the following timelike variable $v$ and spacelike variable $u$ 
+
+\begin{eqnarray}
+    v&=&\frac{1}{2}(p^*+q^*),\\
+    u&=&\frac{1}{2}(p^*-q^*).
+\end{eqnarray}
+
+Following the usual process, we obtain the line element for the Schwarzschild geometry in Kruskal coordinates $(v,u,\theta,\phi$
+
+\begin{equation}
+    ds^2&=& \frac{32\mu^3}{r}exp\left(-\frac{r}{2\mu}\right)(dv^2-du^2)- r^2 d\theta^2 - r^2 \sin^2 \theta d\phi^2,
+\end{equation}
+
+where the coordinate $r$ is defined implicitly by
+
+\begin{equation*}
+u^2-v^2=\left( \frac{2\mu}{r}-1\right)exp\left(-\frac{r}{2\mu}\right).
+\end{equation*}
+
+If $ds=d\theta=d\phi=0$, we obtain 
+
 \begin{eqnarray*}
     \frac{32\mu^3}{r}exp\left(\frac{r}{2\mu}\right)(dv^2-du^2)&=&0\\
-    dv^2&=&du^2\\
-    v&=&\pm u + cte
-\end{eqnarray*}\\
-Thus, the lightcone structure should look like that in Minkowski space. The last values represents straight lines at $\pm45^\circ$ to the axes.
+    dv^2&=&du^2,\\
+    v&=&\pm u + \text{const}.
+\end{eqnarray*}
+
+Thus, the lightcone structure should look like that in Minkowski space. The last values represent straight lines at $\pm45^\circ$ with respect to the axes.
+
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.58\textwidth]{Report/Images/4bhkruskal.png}
     \caption{Spacetime diagram of the Schwarzschild geometry in Kruskal coordinates.}
-\label{fig3}
+\label{fig14}
 \end{figure}
-We can see at this figure the intrinsic singularity, the event horizon, and the mencioned trajetories for a photon when this one passes through the first region to the second region.
+
+We can see in Fig.\ref{fig14} the intrinsic singularity, the event horizon and the mentioned trajectories for a photon when it passes through the first region to the second region.
+
 \begin{itemize}
     \item Region I: exterior to the black hole.
     \item Region II: interior to the black hole.
     \item Region I': exterior to the white hole.
     \item Region II': interior to the black hole.
 \end{itemize}
-As a conclution: The complete Schwarzschild geometry is completley covered by kruskal coordinates and consists of a black hole and white hole and two universes connected at their horizons by a
-wormhole. The black hole has a physical nature but the universe with white holes has a mathematical nature.
 
+As a conclusion, the complete Schwarzschild geometry is completely covered by kruskal coordinates and consists of a black hole and white hole and two universes connected at their horizons by a wormhole. The black hole has a physical nature, but the universe with white holes is rather of a mathematical nature.
 
 \subsection{Gravitational collapse and black-hole formation}
-The possibility of black holes existence arises from the idea of gravitational collapse. Chandrasekhar realized that the more massive a white dwarf, the denser it must be and so the stronger the gravitational field. \begin{itemize}
-    \item The Chandrasekhar limit stablish a
-critical mass of about 1.4 solar masses for white dwarfs over, at this point gravity would
-overwhelm the degeneracy pressure.
-\item The Oppenheimer–Volkoff limit is a maximum mass above which no stable neutron-star configuration is possible and his value is $3$ solar masses. Thus, stars more massive than this limit should collapse (is spherically symmetric) then it must produce a Schwarzschild black hole.
+
+The possibility of the black holes existence arises from the idea of gravitational collapse. Chandrasekhar realized that the more massive a white dwarf is, the denser it must be and so the stronger the gravitational field. Some limits are listed as follows
+
+\begin{itemize}
+\item The Chandrasekhar limit establish a critical mass of about $1.4$ solar masses for white dwarfs, over this value gravity would overpass the degeneracy pressure.
+\item The Oppenheimer–Volkoff limit is a maximum mass above which no stable neutron-star configuration is possible and its value is $3$ solar masses. Thus, stars more massive than this limit should collapse and produce a Schwarzschild black hole.
 \end{itemize}
 
 \subsection{Hawking effect}
-Hawking stablish that black holes radiate
-continuously as a blackbody with a temperature inversely proportional to their mass.
+Hawking establish that black holes radiate continuously as a black body with a temperature inversely proportional to their mass.
 
 \begin{equation}
-    T=\frac{\hbar c^3}{8\pi k_b G M}
+    T=\frac{\hbar c^3}{8\pi k_b G M}.
 \end{equation}
+
 \begin{itemize}
-    \item A particle falls into the black hole and the antiparticle escapes to infinity (or viceverse).
-    \item As seen by an observer at infinity, the black hole has emitted a particle , then the black hole’s mass has decreased as a consequence of the particle falling.\textbf{}
+    \item A particle falls into the black hole and the antiparticle escapes to infinity (or vice versa).
+    \item As seen by an observer at infinity, the black hole has emitted a particle, then the black hole’s mass has decreased as a consequence of the  falling particle.
 \end{itemize}
 
+
+\section{Concluding remarks}
+
+We have described the basic notions of the Schwarzschild geometry and its consequences. We derived the metric by imposing isotropic and static conditions to a general line element (Sec.\ref{intro}). Firstly, we worked with the usual spherical coordinates and described the trajectories of both massive and massless particles in that system (Secs.\ref{massive},\ref{massless}). However, these coordinates were found to be inappropriate to describe black holes, so three different new coordinate systems were proposed to overcome these coordinate-singularities and helped us have a full description of the spacetime where the singularities are only physical (Sec.\ref{bh}). Finally, we highlight again that this document was based on \cite{hobson_efstathiou_lasenby_2006}.
 
 
 \printbibliography
